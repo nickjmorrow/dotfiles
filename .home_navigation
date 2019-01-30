@@ -1,0 +1,6 @@
+# cd aliases
+alias projects='cd ~/Projects'
+alias training='cd ~/Projects/training'
+alias sandbox='cd ~/Projects/sandbox'
+alias tutorials='cd ~/Projects/tutorials'
+alias leetcode='cd ~/Projects/training/leetcode'
