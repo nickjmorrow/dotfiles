@@ -1,0 +1,9 @@
+## wttr.in aliases
+alias wthr='curl wttr.in'
+alias moon='curl wttr.in/Moon'
+
+# other aliases
+alias start='npm run start'
+
+# vs code
+alias opennotes='code ~/Projects/notes'

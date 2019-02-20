@@ -4,3 +4,5 @@ alias training='cd ~/Projects/training'
 alias sandbox='cd ~/Projects/sandbox'
 alias tutorials='cd ~/Projects/tutorials'
 alias leetcode='cd ~/Projects/training/leetcode'
+
+alias ..='cd ../'
