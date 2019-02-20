@@ -6,3 +6,13 @@ alias tutorials='cd ~/Projects/tutorials'
 alias leetcode='cd ~/Projects/training/leetcode'
 
 alias ..='cd ../'
+
+export PS1='\[\e[0;35m[\w]\e[m \e[1;35m$\e[m \]'
+export CLICOLOR=1
+
+alias bashrc='vi ~/.bashrc'
+alias rebash='source ~/.bashrc'
+alias hyperjs='vi ~/.hyper.js'
+alias dotfiles='projects && cd dotfiles'
+
+export LSCOLORS=gxfxcxdxbxegedabagacad
