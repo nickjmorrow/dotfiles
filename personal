@@ -1,0 +1,11 @@
+alias downloads='cd ~/Downloads'
+alias projects='cd ~/Projects'
+
+alias notes='cd ~/Projects/notes'
+alias opennotes='code ~/Projects/notes'
+
+alias professional='projects && cd notes/professional'
+alias openprofessional='code ~//Projects/notes/professional'
+
+alias dotfiles='cd ~/Projects/dotfiles'
+alias opendotfiles='code ~/Projects/dotfiles'
