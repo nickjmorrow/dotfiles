@@ -9,6 +9,7 @@ git config --global alias.master "checkout master"
 git config --global alias.hist "log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short"
 
 # bash aliases for git
+alias g='git'
 alias ga='git add'
 alias gs='git status'
 alias gcb='git checkout -b'
