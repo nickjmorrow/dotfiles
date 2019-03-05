@@ -4,6 +4,6 @@ alias moon='curl wttr.in/Moon'
 
 # npm
 alias n='npm'
-alias run='npm run'
+alias nr='npm run'
 alias start='npm run start'
 alias deploy='npm run deploy'

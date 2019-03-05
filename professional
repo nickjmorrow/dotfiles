@@ -1,6 +1,6 @@
 # aid 
 alias aid='cd ~/../../dev/platform/aid/AnalyticsInsightsData'
-alias scripts='web && cd Scripts'
+alias scripts='aid && cd Apt.Platform.AnalyticsInsightsData.Web/Scripts'
 alias aidjs='scripts'
 alias aidweb='scripts'
 alias aidcalc='cd ~/../../dev/platform/aid/AidCalc'
@@ -20,16 +20,6 @@ alias dmjs='dmweb'
 alias mm='web && cd mastermindScripts'
 alias mmweb='mm'
 alias mmjs='mm'
-
-# navigation
-alias documents='cd ~/../../Users/nmorrow/Documents'
-alias downloads='cd ~/../../users/nmorrow/Downloads'
-alias notes='documents && cd Notes'
-alias projects='cd ~/../../users/nmorrow/Projects'
-alias opennotes='code ~/../../Users/nmorrow/Projects/notes'
-alias professional='projects && cd notes/professional'
-alias openprofessional='code ~/../../Users/nmorrow/Projects/notes/professional'
-alias dotfiles='cd ~/../../users/nmorrow/Projects/dotfiles'
 
 # functions
 function mkconfig() {
