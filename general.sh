@@ -15,23 +15,17 @@ alias opennotes='code ~/Projects/notes'
 alias professional='notes && cd professional'
 alias openprofessional='code ~/Projects/notes/professional'
 
-alias dotfiles='cd ~/Projects/dotfiles'
+alias dotfiles='projects && cd dotfiles'
 alias opendotfiles='code ~/Projects/dotfiles'
-
 
 # config access
 alias bashrc='code ~/.bashrc'
 alias rebash='source ~/.bashrc'
 alias hyperjs='code ~/.hyper.js'
 
-
 # functions
 function cdl() {
 	cd $1 && ls -Gp
-}
-
-parse_git_branch() {
-     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 
 # terminal colors and prompt

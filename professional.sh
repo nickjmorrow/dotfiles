@@ -1,18 +1,21 @@
+# base
+alias platform='cd ~/../../dev/platform'
+
 # aid 
-alias aid='cd ~/../../dev/platform/aid/AnalyticsInsightsData'
+alias aidrepo='platform && cd aid'
+alias aid='aidrepo && cd AnalyticsInsightsData'
 alias scripts='aid && cd Apt.Platform.AnalyticsInsightsData.Web/Scripts'
 alias aidjs='scripts'
 alias aidweb='scripts'
-alias aidcalc='cd ~/../../dev/platform/aid/AidCalc'
-alias aiddatausage='cd ~/../../dev/platform/aid/AidDataUsage'
-alias aiddu='aiddatausage'
+alias aidcalc='aidrepo && cd AidCalc'
+alias aiddu='aidrepo && cd AidDataUsage'
 
 # transaction attributes
-alias ta='cd ~/../../dev/platform/aidtransactionattributescalc'
-alias tacodes='cd ~/../../dev/platform/transactionattributecodes'
+alias ta='platform && cd aidtransactionattributescalc'
+alias tacodes='platform cd transactionattributecodes'
 
 # data management
-alias dm='cd ~/../../dev/platform/aiddatamanagement/AidDataManagement'
+alias dm='platform && cd aiddatamanagement/AidDataManagement'
 alias dmweb='dm && cd Apt.Platform.AidDataManagement.Web/Scripts'
 alias dmjs='dmweb'
 
