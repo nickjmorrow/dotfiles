@@ -38,3 +38,4 @@ parse_git_branch() {
 # export PS1='\e[0;35m[\w] $(parse_git_branch) \e[m \e[1;35m$\e[m '
 export CLICOLOR=1
 export LSCOLORS=gxfxcxdxbxegedabagacad
+export PS1='\[\e[35m\]\n\w\n$ \[\e[0m\]'
