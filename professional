@@ -1,5 +1,6 @@
 # aid 
 alias aid='cd ~/../../dev/platform/aid/AnalyticsInsightsData'
+alias web='aid && cd Apt.Platform.AnalyticsInsightsData.Web'
 alias scripts='aid && cd Apt.Platform.AnalyticsInsightsData.Web/Scripts'
 alias aidjs='scripts'
 alias aidweb='scripts'
