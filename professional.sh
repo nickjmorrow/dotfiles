@@ -2,8 +2,8 @@
 alias platform='cd ~/../../dev/platform'
 
 # aid 
-alias aidrepo='platform && cd aid'
-alias aid='aidrepo && cd AnalyticsInsightsData'
+alias aid='cd ~/../../dev/platform/aid/AnalyticsInsightsData'
+alias web='aid && cd Apt.Platform.AnalyticsInsightsData.Web'
 alias scripts='aid && cd Apt.Platform.AnalyticsInsightsData.Web/Scripts'
 alias aidjs='scripts'
 alias aidweb='scripts'
