@@ -23,3 +23,7 @@ function gacp() {
 	gac "$1"
 	git push
 }
+
+function heroku_subtree() {
+	git subtree push --prefix $1 heroku master
+}
