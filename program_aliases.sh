@@ -5,7 +5,6 @@ alias moon='curl wttr.in/Moon'
 # npm
 alias nr='npm run'
 alias yr='yarn run'
-alias y='yarn'
 
 # heroku
 function heroku_deploy() {
