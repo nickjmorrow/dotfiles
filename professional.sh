@@ -15,9 +15,9 @@ alias ta='platform && cd aidtransactionattributescalc'
 alias tacodes='platform cd transactionattributecodes'
 
 # data management
-alias dm='platform && cd aiddatamanagement/AidDataManagement'
-alias dmweb='dm && cd Apt.Platform.AidDataManagement.Web/Scripts'
-alias dmjs='dmweb'
+alias adm='platform && cd aiddatamanagement/AidDataManagement'
+alias admweb='adm && cd Apt.Platform.AidDataManagement.Web/Scripts'
+alias admjs='admweb'
 
 # mastermind
 alias mm='web && cd mastermindScripts'
