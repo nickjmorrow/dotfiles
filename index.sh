@@ -1,5 +1,7 @@
-source 'config_access.sh'
-source 'git.sh'
-source 'navigation.sh'
-source 'program_aliases.sh'
-source 'terminal_customization.sh'
+current_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+
+source "$current_dir/config_access.sh"
+source "$current_dir/git.sh"
+source "$current_dir/navigation.sh"
+source "$current_dir/program_aliases.sh"
+source "$current_dir/terminal_customization.sh"
