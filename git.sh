@@ -6,6 +6,8 @@ git config --global alias.s 'status'
 
 # bash aliases for git
 alias g='git'
+# this overwrites GhostScript
+alias gs='git status'
 alias gac='git add -A && git commit -m '
 alias gcom='git checkout master && git pull'
 
