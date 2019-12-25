@@ -1,0 +1,5 @@
+source './config_access.sh'
+source './git.sh'
+source './navigation.sh'
+source './program_aliases.sh'
+source './terminal_customization.sh'

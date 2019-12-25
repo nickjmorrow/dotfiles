@@ -7,23 +7,11 @@ git config --global alias.hist "log --pretty=format:'%h %ad | %s%d [%an]' --grap
 
 # bash aliases for git
 alias g='git'
-alias ga='git add'
-alias gaa='git add -A'
 alias gs='git status'
-alias gcb='git checkout -b'
-alias gd='git diff'
-alias gc='git commit -m'
 alias gac='git add -A && git commit -m '
-alias gaca='git add -A && git commit --amend --no-edit'
-alias gacam='git add -A && git commit --amend -m'
-alias gco='git checkout'
 alias gcom='git checkout master && git pull'
 
 function gacp() {
 	gac "$1"
 	git push
-}
-
-function heroku_subtree() {
-	git subtree push --prefix $1 heroku master
 }
