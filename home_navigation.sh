@@ -1,7 +1,3 @@
-alias ..='cd ..'
-alias ...='cd ../../'
-alias ....='cd ../../../'
-
 alias projects='cd ~/Projects'
 alias tnotes='projects && cd technical-notes'
 alias pnotes='projects && cd personal-notes'
