@@ -1,4 +1,4 @@
-alias ahk='code ~/external/work_hot_key_scripts.ahk'
+alias wahk='code ~/external/work_hot_key_scripts.ahk'
 alias external='cd ~/external'
 alias dotfiles='external && cd dotfiles'
 alias projects='cd ~/../../Projects'
