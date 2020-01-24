@@ -15,6 +15,8 @@ alias svn-recent='svn log -l 3'
 # get current branch name
 alias svn-cur="svn info | grep '^URL:'"
 
+alias svn-d="svn diff --summarize"
+
 # switch to branch with name $1
 function svnco() {
 	svn switch $TRSBASE/branches/Nicholas.Morrow/$1
@@ -22,5 +24,7 @@ function svnco() {
 
 # create copy from trunk
 function svncopy() {
-	svn-home && svn update && svn copy $SVNTRUNK "$TRSBASE/$BRANCHROUTE/$1"
+	svn-home && svn update && svn copy $SVNTRUNK "$TRSBASE/$BRANCHROUTE/$1" --non-interactive -m "$2"
 }
+
+# svn copy $SVNTRUNK "$TRSBASE/$BRANCHROUTE/us-16924" --non-interactive -m "Create branch for US-16924."
