@@ -4,7 +4,6 @@ parse_git_branch() {
 }
 
 # terminal colors and prompt
-export PS1='\e[0;35m[\w] $(parse_git_branch) \e[m \e[1;35m$\e[m '
 export CLICOLOR=1
 export LSCOLORS=gxfxcxdxbxegedabagacad
-export PS1='\n\[\e[0;36m\]\w\e[m\e[0;35m$(parse_git_branch)\e[m\e[0;32m\n$ \[\e[m\]'
+export PS1='\[\033]0;$TITLEPREFIX:$PWD\007\]\n\[\033[35m\]\u \[\033[35m\]\[\033[32m\]\W\[\033[36m\]`__git_ps1`\[\033[0m\]\n$ '

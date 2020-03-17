@@ -1,4 +1,3 @@
-export EDITOR='code'
 export SVN_EDITOR='code'
 
 export TRSBASE='https://fora164temp.forafinancial.com:9443/svn/ForaFinancial-V2.1/TRS/TRSIII'
