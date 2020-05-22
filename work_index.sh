@@ -1,8 +1,10 @@
 current_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
-source "$current_dir/config_access.sh"
-source "$current_dir/git.sh"
-source "$current_dir/general_navigation.sh"
-source "$current_dir/program_aliases.sh"
-source "$current_dir/terminal_customization.sh"
-source "$current_dir/work_navigation.sh"
+dotfiles_dir=${rider_dir:-$current_dir}
+
+source "$dotfiles_dir/config_access.sh"
+source "$dotfiles_dir/git.sh"
+source "$dotfiles_dir/general_navigation.sh"
+source "$dotfiles_dir/program_aliases.sh"
+source "$dotfiles_dir/terminal_customization.sh"
+source "$dotfiles_dir/work_navigation.sh"
