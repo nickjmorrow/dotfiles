@@ -1,10 +1,7 @@
-current_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
-
-dotfiles_dir=${rider_dir:-$current_dir}
-
-source "$dotfiles_dir/config_access.sh"
-source "$dotfiles_dir/git.sh"
-source "$dotfiles_dir/general_navigation.sh"
-source "$dotfiles_dir/program_aliases.sh"
-source "$dotfiles_dir/terminal_customization.sh"
-source "$dotfiles_dir/work_navigation.sh"
+source "C:/Users/Nicholas.Morrow/external/dotfiles/config_access.sh"
+source "C:/Users/Nicholas.Morrow/external/dotfiles/git.sh"
+source "C:/Users/Nicholas.Morrow/external/dotfiles/general_navigation.sh"
+source "C:/Users/Nicholas.Morrow/external/dotfiles/program_aliases.sh"
+source "C:/Users/Nicholas.Morrow/external/dotfiles/terminal_customization.sh"
+source "C:/Users/Nicholas.Morrow/external/dotfiles/work_navigation.sh"
+source "C:/Users/Nicholas.Morrow/external/dotfiles/work_git.sh"
