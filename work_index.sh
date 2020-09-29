@@ -1,7 +1,1 @@
-source "C:/Users/Nicholas.Morrow/external/dotfiles/config_access.sh"
-source "C:/Users/Nicholas.Morrow/external/dotfiles/git.sh"
-source "C:/Users/Nicholas.Morrow/external/dotfiles/general_navigation.sh"
-source "C:/Users/Nicholas.Morrow/external/dotfiles/program_aliases.sh"
-source "C:/Users/Nicholas.Morrow/external/dotfiles/terminal_customization.sh"
-source "C:/Users/Nicholas.Morrow/external/dotfiles/work_navigation.sh"
-source "C:/Users/Nicholas.Morrow/external/dotfiles/work_git.sh"
+source "/Users/nicholas.morrow/Projects/dotfiles/work_navigation.sh"
