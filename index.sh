@@ -1,6 +1,7 @@
 # From https://stackoverflow.com/a/246128
+THIS=`readlink -f "${BASH_SOURCE[0]}" 2>/dev/null||echo $0`
+current_dir=`dirname "${THIS}"`
 
-current_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 source "$current_dir/config_access.sh"
 source "$current_dir/git.sh"

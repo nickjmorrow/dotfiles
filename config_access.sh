@@ -1,3 +1,13 @@
-alias bashrc='code ~/.bashrc'
+# bash
+alias bashrc='vim ~/.bashrc'
 alias rebash='source ~/.bashrc'
-alias hyperjs='code ~/.hyper.js'
+
+# hyper
+alias hyperjs='vim ~/.hyper.js'
+
+# zsh
+alias zshrc='vim ~/.zshrc'
+alias rezsh='source ~/.zshrc'
+
+# vim
+alias vimrc='vim ~/Projets/dotfiles/config.vim'
