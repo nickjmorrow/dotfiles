@@ -10,5 +10,5 @@ alias zshrc='vim ~/.zshrc'
 alias rezsh='source ~/.zshrc'
 
 # vim
-alias vimrc='vim ~/Projets/dotfiles/config.vim'
+alias vimrc='vim ~/Projects/dotfiles/config.vim'
 

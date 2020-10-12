@@ -7,17 +7,16 @@ Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-surround'
 Plug 'preservim/nerdtree'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'ryanoasis/vim-devicons'
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'prettier/vim-prettier', { 'do': 'npm install' }
-Plug 'nickjmorrow/newdayone.vim'
 Plug 'luochen1990/rainbow'
 Plug 'pangloss/vim-javascript'    " JavaScript support
 Plug 'maxmellon/vim-jsx-pretty'   " JS and JSX syntax
 Plug 'jparise/vim-graphql'        " GraphQL syntax
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+Plug 'ryanoasis/vim-devicons'
 
 let mapleader=","
 
@@ -41,6 +40,7 @@ set noerrorbells
 set mouse=a
 set title
 set background=dark
+set scrolloff=99
 
 " search
 set hlsearch
@@ -50,6 +50,10 @@ set smartcase
 
 " mappings
 map <C-o> :NERDTreeToggle<CR>
+
+" editing
+" set swapfile
+" set dir=~/tmp
 
 " coc config
 let g:coc_global_extensions = [ 'coc-tsserver',
@@ -67,25 +71,28 @@ set updatetime=500
 let g:typescript_indent_disable = 1
 autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
 autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
-nnoremap <silent> K :call CocAction('doHover')<CR>
+ nnoremap <silent> K :call CocAction('doHover')<CR>
+ 
+" function! ShowDocIfNoDiagnostic(timer_id)
+"   if (coc#util#has_float() == 0)
+"     silent call CocActionAsync('doHover')
+"   endif
+" endfunction
+" 
+" function! s:show_hover_doc()
+"   call timer_start(500, 'ShowDocIfNoDiagnostic')
+" endfunction
+" 
+" autocmd CursorHoldI * :call <SID>show_hover_doc()
+" autocmd CursorHold * :call <SID>show_hover_doc()
 
-function! ShowDocIfNoDiagnostic(timer_id)
-  if (coc#util#has_float() == 0)
-    silent call CocActionAsync('doHover')
-  endif
-endfunction
-
-function! s:show_hover_doc()
-  call timer_start(500, 'ShowDocIfNoDiagnostic')
-endfunction
-
-autocmd CursorHoldI * :call <SID>show_hover_doc()
-autocmd CursorHold * :call <SID>show_hover_doc()
 nmap <leader>do <Plug>(coc-codeaction)
 nnoremap <silent> <space>d :<C-u>CocList diagnostics<cr>
 " typescript react
 " set filetypes as typescript.tsx
-autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
+autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
+autocmd BufNewFile,BufRead *.jsx set filetype=javascript.jsx
+
 " save file
 nnoremap zz :update<cr>
 inoremap zz <Esc>:update<cr>gi
@@ -99,13 +106,8 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap gr <Plug>(coc-references)
 
-" GoTo code navigation.
-" nmap <silent> gd <Plug>(coc-definition)
-" nmap <silent> gy <Plug>(coc-type-definition)
-" nmap <silent> gi <Plug>(coc-implementation)
-" nmap <silent> gr <Plug>(coc-references)
-"
 nnoremap <C-p> :GFiles<CR>
+
 " status line
 Plug 'itchyny/lightline.vim'
 
@@ -120,4 +122,3 @@ let g:lightline = {
 syntax on
 
 call plug#end()
-
