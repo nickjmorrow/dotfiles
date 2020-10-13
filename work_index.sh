@@ -1,1 +1,5 @@
 source "/Users/nicholas.morrow/Projects/dotfiles/work_navigation.sh"
+source "/Users/nicholas.morrow/Projects/dotfiles/config_access.sh"
+source "/Users/nicholas.morrow/Projects/dotfiles/git.sh"
+source "/Users/nicholas.morrow/Projects/dotfiles/general_navigation.sh"
+source "/Users/nicholas.morrow/Projects/dotfiles/program_aliases.sh"
