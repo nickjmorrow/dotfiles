@@ -18,7 +18,7 @@ git config --global alias.unstage 'reset --soft HEAD^'
 
 alias gcom='git checkout master && git pull'
 alias gcod='git checkout develop && git pull'
-
+alias gcpf='git commit --amend --no-edit && g push -f'
 alias gac='git add -A && git commit -m '
 
 # add and commit all changes. dangerous
