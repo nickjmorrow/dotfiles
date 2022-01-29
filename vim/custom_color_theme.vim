@@ -29,23 +29,24 @@ function! Col(group,guifg)
 endfunction
 
 let CONSTANT="#bdcb17"
-let WHITE="#ededed"
-let CYAN="#00FFEE"
-let YELLOW="#FDCB17"
+let WHITE="#FDF0ED"
+let CYAN="#33ffeb"
+let YELLOW="#ffc34d"
 let MAGENTA="#FF337E"
-let PURPLE="#7A45FF"
-let BLUE="#5263FF"
+let PURPLE="#965dff"
+let BLUE="#6570ff"
+let GREEN="#80ff5c"
+let DARK_GRAY="#2E303E"
 
 hi Normal guifg=#e4dada ctermbg=NONE guibg=NONE gui=NONE
-" call Coloring("Normal","NONE","#e4dada","NONE","NONE","NONE")
-" call Coloring("String","NONE",CONSTANT,"NONE","NONE","NONE")
 call Coloring("Normal", "NONE", WHITE, "NONE", "NONE", "NONE")
-call Coloring("Constant","NONE",CONSTANT,"NONE","NONE","NONE")
+call Coloring("ColorColumn", DARK_GRAY, WHITE, "NONE", "NONE", "NONE")
 call Col("typescriptExport",CYAN)
 call Col("typescriptImport", CYAN)
 call Col("typescriptCastKeyword", CYAN)
 call Col("typescriptTypeBrackets", CYAN)
 call Col("typescriptBraces", CYAN)
+call Col("typescriptConditional", CYAN)
 call Col("typescriptTypeReference", YELLOW)
 call Col("typescriptMember", WHITE)
 call Col("typescriptVariable", PURPLE)
@@ -54,9 +55,12 @@ call Col("typescriptCall", WHITE)
 call Col("typescriptVariableDeclaration", BLUE)
 call Col("tsxTagName", YELLOW)
 call Col("tsxAttrib", PURPLE)
-
-
-
+call Col("typescriptString", GREEN)
+call Col("typescriptBoolean", GREEN)
+call Col("typescriptNull", GREEN)
+call Col("typescriptBOMHistoryProp", WHITE)
+call Col("typescriptIdentifierName", BLUE)
+call Col("typescriptBinaryOp", PURPLE)
 
 hi DiffText guifg=#fd1769 guibg=NONE
 

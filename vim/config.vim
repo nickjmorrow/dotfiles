@@ -51,10 +51,8 @@ set title
 set scrolloff=99
 
 " search
-" set hlsearch
-" set ignorecase
-" set incsearch
-" set smartcase
+set ignorecase
+set smartcase
 
 
 " save file
@@ -148,10 +146,6 @@ inoremap <expr> <cr> pumvisible() ? "\<c-y>" : "\<c-g>u\<cr>"
 
 let g:ackorg = 'ag --vimgrep --smart-case'
 
-:set ignorecase
-:set smartcase
-
-
 cnoreabbrev ag Ack
 cnoreabbrev aG Ack
 cnoreabbrev Ag Ack
@@ -193,8 +187,6 @@ let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 set background=dark
 
 source ~/.vim/colors/custom_color_scheme.vim
-" source ~/Projects/dotfiles/vim/custom_color_scheme.vim
-" colorscheme custom_color_theme
 
 highlight colorcolumn ctermbg=0
 
