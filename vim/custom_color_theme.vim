@@ -32,11 +32,13 @@ let CONSTANT="#bdcb17"
 let WHITE="#FDF0ED"
 let CYAN="#33ffeb"
 let YELLOW="#ffc34d"
-let MAGENTA="#FF337E"
+let MAGENTA="#ff337e"
 let PURPLE="#965dff"
 let BLUE="#6570ff"
-let GREEN="#80ff5c"
+let GREEN="#9afd7f"
 let DARK_GRAY="#2E303E"
+let ORANGE="#FF7F4D"
+let TEAL="#8095A1"
 
 hi Normal guifg=#e4dada ctermbg=NONE guibg=NONE gui=NONE
 call Coloring("Normal", "NONE", WHITE, "NONE", "NONE", "NONE")
@@ -47,20 +49,67 @@ call Col("typescriptCastKeyword", CYAN)
 call Col("typescriptTypeBrackets", CYAN)
 call Col("typescriptBraces", CYAN)
 call Col("typescriptConditional", CYAN)
+call Col("typescriptCase", CYAN)
+call Col("typescriptDestructureVariable", WHITE)
+call Col("typescriptDestructureLabel", WHITE)
+call Col("typescriptObjectLabel", WHITE)
+call Col("typescriptParens", CYAN)
+call Col("typescriptArrowFunc", PURPLE)
+call Col("typescriptAssign", PURPLE)
 call Col("typescriptTypeReference", YELLOW)
 call Col("typescriptMember", WHITE)
 call Col("typescriptVariable", PURPLE)
-call Col("typescriptMemberOptionality", MAGENTA)
+call Col("typescriptVariableDeclaration", MAGENTA)
+call Col("typescriptMemberOptionality", PURPLE)
 call Col("typescriptCall", WHITE)
-call Col("typescriptVariableDeclaration", BLUE)
+call Col("tsxTag", CYAN)
 call Col("tsxTagName", YELLOW)
+call Col("tsxCloseTag", CYAN)
+
+call Col("tsxCloseComponentName", YELLOW)
 call Col("tsxAttrib", PURPLE)
+call Col("typescriptAliasDeclaration", YELLOW)
+call Col("typescriptAliasKeyword", PURPLE)
+call Col("typescriptInterfaceKeyword", PURPLE)
+call Col("typescriptInterfaceName", YELLOW)
+call Col("typescriptStringLiteralType", GREEN)
+call Col("typescriptTypeQuery", PURPLE)
 call Col("typescriptString", GREEN)
 call Col("typescriptBoolean", GREEN)
 call Col("typescriptNull", GREEN)
 call Col("typescriptBOMHistoryProp", WHITE)
-call Col("typescriptIdentifierName", BLUE)
 call Col("typescriptBinaryOp", PURPLE)
+call Col("typescriptTernaryOp", PURPLE)
+call Col("tsxAttributeBraces", CYAN)
+call Col("tsxEqual", PURPLE)
+call Col("typescriptBoolean", ORANGE)
+call Col("typescriptNumber", ORANGE)
+call Col("typescriptNull", ORANGE)
+call Col("typescriptPredefinedType", TEAL)
+call Col("typescriptEndColons", CYAN)
+call Col("typescriptIdentifierName", BLUE)
+call Col("typescriptDotNotation", CYAN)
+call Col("typescriptClassKeyword", PURPLE)
+call Col("typescriptClassName", YELLOW)
+call Col("typescriptClassExtends", PURPLE)
+call Col("typescriptGlobal", YELLOW)
+call Col("typescriptTypeAnnotation", PURPLE)
+call Col("jsFuncCall", BLUE)
+call Col("jsFuncArgs", MAGENTA)
+call Col("jsArrowFunction", PURPLE)
+call Col("jsFuncBraces", CYAN)
+
+
+call Coloring("CursorLine", "NONE", "NONE", "NONE", "NONE", "NONE")
+call Coloring("CursorColumn", "NONE", "NONE", "NONE", "NONE", "NONE")
+
+call Col("vimString", GREEN)
+call Col("vimCommand", CYAN)
+call Col("vimVar", MAGENTA)
+call Col("vimHiGroup", MAGENTA)
+call Col("vimGroup", MAGENTA)
+call Col("vimHiGuiFgBg", MAGENTA)
+call Col("vimOption", MAGENTA)
 
 hi DiffText guifg=#fd1769 guibg=NONE
 

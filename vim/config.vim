@@ -61,8 +61,17 @@ inoremap zz <esc>:update<cr>gi
 
 " status line
 Plug 'itchyny/lightline.vim'
+Plug 'itchyny/vim-gitbranch'
+
 let g:lightline = {
-      \ 'colorscheme': 'jellybeans',
+      \ 'colorscheme': 'PaperColor',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'gitbranch#name'
+      \ },
       \ }
 
 Plug 'frazrepo/vim-rainbow'
