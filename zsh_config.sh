@@ -31,5 +31,5 @@ ZSH_THEME=""
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 
-export PROMPT=$'\n%B%F{blue}%1~%b%f $(git_current_branch) %F{magenta}\n>%F{white} '
+export PROMPT=$'\n%B%F{blue}%1~%b%f %F{yellow}$(git_current_branch) %F{magenta}\n>%F{white} '
 

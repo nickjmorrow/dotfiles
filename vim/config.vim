@@ -156,7 +156,16 @@ Plug 'preservim/nerdtree'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'ryanoasis/vim-devicons'
 
-nnoremap <C-l> :NERDTreeToggle<Enter>
+" Toggle NERDTree
+function MyNerdToggle()
+    if &filetype == 'nerdtree'
+        :NERDTreeToggle
+    else
+        :NERDTreeFind
+    endif
+endfunction
+
+nnoremap <C-l> :call MyNerdToggle()<CR>
 
 let NERDTreeQuitOnOpen = 1
 let NERDTreeAutoDeleteBuffer = 1
