@@ -37,6 +37,8 @@ let PURPLE="#965dff"
 let BLUE="#6570ff"
 let GREEN="#9afd7f"
 let DARK_GRAY="#2E303E"
+let LIGHT_GRAY="#6C6F93"
+let BACKGROUND="#16161c"
 let ORANGE="#FF7F4D"
 let TEAL="#8095A1"
 
@@ -102,8 +104,12 @@ call Col("jsFuncBraces", CYAN)
 
 call Coloring("CursorLine", "NONE", "NONE", "NONE", "NONE", "NONE")
 call Coloring("CursorColumn", "NONE", "NONE", "NONE", "NONE", "NONE")
+" hi LineNr guifg=#8c6666 guibg=#16161c
+call Coloring("LineNr",BACKGROUND,LIGHT_GRAY,"NONE","NONE","NONE")
+
 
 call Col("vimString", GREEN)
+call Col("vimFuncName", BLUE)
 call Col("vimCommand", CYAN)
 call Col("vimVar", MAGENTA)
 call Col("vimHiGroup", MAGENTA)
@@ -167,7 +173,6 @@ hi cssAttr guifg=#00ffee guibg=NONE
 hi Pmenu guifg=#e4dada guibg=#454545
 hi SignColumn guibg=#16161c
 hi Title guifg=#e4dada
-hi LineNr guifg=#8c6666 guibg=#16161c
 hi NonText guifg=#5c8863 guibg=#16161c
 hi Comment guifg=#5c8863 gui=italic
 hi SpecialComment guifg=#5c8863 gui=italic guibg=NONE
