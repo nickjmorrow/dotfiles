@@ -1,5 +1,12 @@
 filetype plugin on
 
+" Install vim-plug if not installed.
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
 call plug#begin('~/.vim/plugged')
 
 Plug 'mileszs/ack.vim'
@@ -9,7 +16,7 @@ Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-surround'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
-
+Plug 'tpope/vim-sensible'
 
 set wrap
 set clipboard=unnamed
@@ -21,6 +28,8 @@ let &t_EI = "\<Esc>]50;CursorShape=1\x7"
 let mapleader=","
 
 set encoding=UTF-8
+
+nnoremap <Leader>r :source $MYVIMRC<CR>
 
 " indentation
 set tabstop=4
@@ -67,45 +76,13 @@ set smartindent
 
 " ## TYPESCRIPT, JAVASCRIPT, REACT
 " Pick one of these.
-" Plug 'leafgarland/typescript-vim'
 Plug 'HerringtonDarkholme/yats.vim'
+Plug 'leafgarland/typescript-vim'
 
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 Plug 'pangloss/vim-javascript'
-
-" jsx tag colors
-" dark red
-hi tsxTagName guifg=#E06C75
-hi tsxComponentName guifg=#E06C75
-hi tsxCloseComponentName guifg=#E06C75
-
-" orange
-hi tsxCloseString guifg=#F99575
-hi tsxCloseTag guifg=#F99575
-hi tsxCloseTagName guifg=#F99575
-hi tsxAttributeBraces guifg=#F99575
-hi tsxEqual guifg=#F99575
-
-" yellow
-hi tsxAttrib guifg=#F8BD7F cterm=italic
-
-" jsx generics
-" light-grey
-hi tsxTypeBraces guifg=#999999
-" dark-grey
-hi tsxTypes guifg=#666666
-
-" other keywords
-hi ReactState guifg=#C176A7
-hi ReactProps guifg=#D19A66
-hi ApolloGraphQL guifg=#CB886B
-hi Events ctermfg=204 guifg=#56B6C2
-hi ReduxKeywords ctermfg=204 guifg=#C678DD
-hi ReduxHooksKeywords ctermfg=204 guifg=#C176A7
-hi WebBrowser ctermfg=204 guifg=#56B6C2
-hi ReactLifeCycleMethods ctermfg=204 guifg=#D19A66
 
 set updatetime=500
 let g:typescript_indent_disable = 1
@@ -171,21 +148,54 @@ inoremap <expr> <cr> pumvisible() ? "\<c-y>" : "\<c-g>u\<cr>"
 
 let g:ackorg = 'ag --vimgrep --smart-case'
 
+:set ignorecase
+:set smartcase
+
 
 cnoreabbrev ag Ack
 cnoreabbrev aG Ack
 cnoreabbrev Ag Ack
 cnoreabbrev AG Ack
 
+" ## NERDTREE
+Plug 'preservim/nerdtree'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'ryanoasis/vim-devicons'
+
+nnoremap <C-l> :NERDTreeToggle<Enter>
+
+let NERDTreeQuitOnOpen = 1
+let NERDTreeAutoDeleteBuffer = 1
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
+
+" Show syntax group on CTRL+SHIFT+P when hovering with cursor.
+nmap <Leader>sg :call <SID>SynStack()<CR>
+function! <SID>SynStack()
+    if !exists("*synstack")
+        return
+    endif
+    echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc
+
+" END PLUGS
 
 call plug#end()
 
 " go to file
 nnoremap <C-p> :GFiles<CR>
 
-colorscheme material
+set termguicolors
+
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
 set background=dark
+
+source ~/.vim/colors/custom_color_scheme.vim
+" source ~/Projects/dotfiles/vim/custom_color_scheme.vim
+" colorscheme custom_color_theme
+
 highlight colorcolumn ctermbg=0
 
 let g:rainbow_active = 1
@@ -195,38 +205,7 @@ let g:rainbow_active = 1
 
 syntax on
 
-" Nerdtree
-Plug 'preservim/nerdtree'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'ryanoasis/vim-devicons'
-
-nnoremap <C-l> :NERDTreeToggle<CR>
-
-" Open NERDTree to current file
-" Check if NERDTree is open or active
-function! IsNERDTreeOpen()
-  return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
-endfunction
-
-" Call NERDTreeFind iff NERDTree is active, current window contains a modifiable
-" file, and we're not in vimdiff
-function! SyncTree()
-  if &modifiable && IsNERDTreeOpen() && strlen(expand('%')) > 0 && !&diff
-    NERDTreeFind
-    wincmd p
-  endif
-endfunction
-
-" Highlight currently open buffer in NERDTree
-autocmd BufRead * call SyncTree()
-" END Open NERDTREE to current file
-
-
-" set working directory to current file
-set autochdir
-
-set ignorecase
-
+" ## SOURCE OTHER FILES
 source ~/Projects/dotfiles/vim/text_search.vim
 source ~/Projects/dotfiles/vim/dim_active_window.vim
 source ~/Projects/dotfiles/vim/markdown.vim

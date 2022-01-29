@@ -3,7 +3,7 @@ source ~/.bashrc
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/nicholasmorrow/.oh-my-zsh
+# export ZSH=/Users/nicholasmorrow/.oh-my-zsh
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -13,7 +13,7 @@ plugins=(
   git
 )
 
-source $ZSH/oh-my-zsh.sh
+# source $ZSH/oh-my-zsh.sh
 
 # User configuration
 ZSH_THEME=""

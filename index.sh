@@ -10,3 +10,6 @@ source "$current_dir/config_access.sh"
 source "$current_dir/git.sh"
 source "$current_dir/general_navigation.sh"
 source "$current_dir/program_aliases.sh"
+source "$current_dir/zsh_config.sh"
+# Resolve issue with script before uncommenting. See comment in file.
+# source "$current_dir/install_oh_my_zsh.sh"

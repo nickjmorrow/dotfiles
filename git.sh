@@ -9,6 +9,7 @@ git config --global core.editor "code --wait"
 git config --global alias.fr "!git fetch && git rebase -i origin/master"
 git config --global alias.hist "log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short --decorate"
 git config --global alias.s 'status'
+git config --global alias.c 'commit'
 git config --global alias.co 'checkout'
 git config --global alias.cob 'checkout -b'
 git config --global alias.unstage 'reset --soft HEAD^'
