@@ -31,6 +31,10 @@ set encoding=UTF-8
 
 nnoremap <Leader>r :source $MYVIMRC<CR>
 
+" CTRL+P
+Plug 'ctrlpvim/ctrlp.vim'
+let g:ctrlp_cmd = 'CtrlPMRU'
+
 " indentation
 set tabstop=4
 set autoindent
@@ -64,11 +68,12 @@ Plug 'itchyny/lightline.vim'
 Plug 'itchyny/vim-gitbranch'
 
 let g:lightline = {
-      \ 'colorscheme': 'materia',
+      \ 'colorscheme': 'custom_lightline_theme',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-      \ },
+      \             [ 'gitbranch', 'readonly', 'filename', 'filetype' ] ],
+		    \ 'right': [
+		    \            ] },
       \ 'component_function': {
       \   'gitbranch': 'gitbranch#name',    
 	  \   'filename': 'LightlineFilename',
@@ -207,7 +212,7 @@ endfunc
 call plug#end()
 
 " go to file
-nnoremap <C-p> :GFiles<CR>
+nnoremap <C-e> :GFiles<CR>
 
 set termguicolors
 

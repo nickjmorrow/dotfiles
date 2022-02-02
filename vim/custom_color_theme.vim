@@ -30,12 +30,12 @@ endfunction
 
 let CONSTANT="#bdcb17"
 let WHITE="#FDF0ED"
-let CYAN="#33ffeb"
+let CYAN="#25B2BC"
 let YELLOW="#ffc34d"
-let MAGENTA="#ff337e"
+let MAGENTA="#F43E5C"
 let PURPLE="#965dff"
 let BLUE="#6570ff"
-let GREEN="#9afd7f"
+let GREEN="#3FDAA4"
 let DARK_GRAY="#2E303E"
 let LIGHT_GRAY="#6C6F93"
 let BACKGROUND="#16161c"
@@ -52,7 +52,7 @@ call Col("typescriptTypeBrackets", CYAN)
 call Col("typescriptBraces", CYAN)
 call Col("typescriptConditional", CYAN)
 call Col("typescriptCase", CYAN)
-call Col("typescriptDestructureVariable", WHITE)
+call Col("typescriptDestructureVariable", MAGENTA)
 call Col("typescriptDestructureLabel", WHITE)
 call Col("typescriptObjectLabel", WHITE)
 call Col("typescriptParens", CYAN)
@@ -79,6 +79,7 @@ call Col("typescriptTypeQuery", PURPLE)
 call Col("typescriptString", GREEN)
 call Col("typescriptBoolean", GREEN)
 call Col("typescriptNull", GREEN)
+call Col("typescriptTemplate", GREEN)
 call Col("typescriptBOMHistoryProp", WHITE)
 call Col("typescriptBinaryOp", PURPLE)
 call Col("typescriptTernaryOp", PURPLE)
