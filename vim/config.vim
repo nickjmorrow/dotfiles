@@ -20,6 +20,9 @@ Plug 'tpope/vim-sensible'
 
 set wrap
 set clipboard=unnamed
+"
+" reload file if edited outside vim
+set autoread
 
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 let &t_SR = "\<Esc>]50;CursorShape=1\x7"
