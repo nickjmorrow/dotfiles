@@ -215,7 +215,7 @@ endfunc
 call plug#end()
 
 " go to file
-nnoremap <C-e> :GFiles<CR>
+nnoremap <C-p> :GFiles<CR>
 
 set termguicolors
 
