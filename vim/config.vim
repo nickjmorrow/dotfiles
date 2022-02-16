@@ -23,6 +23,12 @@ set clipboard=unnamed
 " reload file if edited outside vim
 set autoread
 
+" allow for navigating away from edited files
+set hidden
+
+" undo 
+nnoremap <C-z> u
+
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 let &t_SR = "\<Esc>]50;CursorShape=1\x7"
 let &t_EI = "\<Esc>]50;CursorShape=1\x7"
