@@ -191,7 +191,7 @@ function MyNerdToggle()
     endif
 endfunction
 
-nnoremap <C-l> :call MyNerdToggle()<CR>
+nnoremap <C-E> :call MyNerdToggle()<CR>
 
 let NERDTreeQuitOnOpen = 1
 let NERDTreeAutoDeleteBuffer = 1
