@@ -9,7 +9,6 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'mileszs/ack.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-eunuch'
@@ -41,9 +40,12 @@ let g:ctrlp_cmd = 'CtrlPMRU'
 " indentation
 set tabstop=4
 set autoindent
+set smartindent
 set shiftround
 set shiftwidth=4
 set smarttab
+
+Plug 'jiangmiao/auto-pairs'
 
 " user interface
 set laststatus=2
@@ -98,8 +100,6 @@ Plug 'frazrepo/vim-rainbow'
 Plug 'kaicataldo/material.vim', { 'branch': 'main' }
 
 
-set autoindent
-set smartindent
 
 " ## TYPESCRIPT, JAVASCRIPT, REACT
 " Pick one of these.
@@ -136,28 +136,26 @@ highlight cocfloating ctermbg=black
 
 " show type documentation
 nnoremap <silent> K :call CocAction('doHover')<CR>
-
 " shows code actions
 nmap <leader>do <Plug>(coc-codeaction)
-
-" 
-nnoremap <silent> <space>d :<C-u>CocList diagnostics<cr>
-" remap rename current word
-nmap <leader>rn <plug>(coc-rename)
-
+" Symbol renaming.
+nmap <leader>rn <Plug>(coc-rename)
 " go to definition 
-nmap <silent> gd <plug>(coc-definition)
+nmap <silent> gd <Plug>(coc-definition)
 " go to type definition
-nmap <silent> gy <plug>(coc-type-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
 " go to implementation
-nmap <silent> gi <plug>(coc-implementation)
+nmap <silent> gi <Plug>(coc-implementation)
 " list references for go-to access
 nmap gr <plug>(coc-references)
 
-nmap <silent> U <Plug>(coc-diagnostic-prev)
-nmap <silent> I <Plug>(coc-diagnostic-next)
-
+" ### Diagnostics
+" Show diagnostics window 
 nnoremap <silent> <space>d :<C-u>CocList diagnostics<cr>
+" previous diagnostic error
+nmap <silent> U <Plug>(coc-diagnostic-prev)
+" next diagnostic error
+nmap <silent> I <Plug>(coc-diagnostic-next)
 
 " tab completion
 " use <tab> for trigger completion and navigate to the next complete item
@@ -172,13 +170,6 @@ inoremap <silent><expr> <tab>
       \ coc#refresh()
 
 inoremap <expr> <cr> pumvisible() ? "\<c-y>" : "\<c-g>u\<cr>"
-
-let g:ackorg = 'ag --vimgrep --smart-case'
-
-cnoreabbrev ag Ack
-cnoreabbrev aG Ack
-cnoreabbrev Ag Ack
-cnoreabbrev AG Ack
 
 " ## NERDTREE
 Plug 'preservim/nerdtree'
@@ -216,6 +207,9 @@ call plug#end()
 
 " go to file
 nnoremap <C-o> :GFiles<CR>
+
+" find text in project
+nnoremap <C-F> :Rg<CR>
 
 set termguicolors
 
