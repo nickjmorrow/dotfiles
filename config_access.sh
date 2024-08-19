@@ -12,4 +12,5 @@ alias rezsh='source ~/.zshrc'
 # vim
 alias vimrc='vim ~/Projects/dotfiles/vim/config.vim'
 alias vimcolors="vi ~/Projects/dotfiles/vim/custom_color_theme.vim"
+alias revim='source ~/.vimrc'
 

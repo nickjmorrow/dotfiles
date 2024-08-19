@@ -13,6 +13,7 @@ git config --global alias.c 'commit'
 git config --global alias.co 'checkout'
 git config --global alias.cob 'checkout -b'
 git config --global alias.unstage 'reset --soft HEAD^'
+git config --global alias.cp 'cherry-pick'
 
 # bash aliases for git
 
@@ -21,6 +22,8 @@ alias gcom='git checkout master && git pull'
 alias gcod='git checkout develop && git pull'
 alias gcpf='git commit --amend --no-edit && g push -f'
 alias gac='git add -A && git commit -m '
+alias gnc='git add -A && git commit --amend --no-edit && git push --force'
+alias gcpnv='git add . && git commit --no-verify && g push'
 
 # add and commit all changes. dangerous
 function gacp() {

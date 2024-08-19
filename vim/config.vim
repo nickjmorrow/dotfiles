@@ -9,6 +9,7 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
+Plug 'NLKNguyen/papercolor-theme'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-eunuch'
@@ -16,7 +17,17 @@ Plug 'tpope/vim-surround'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'tpope/vim-sensible'
+Plug 'rust-lang/rust.vim'
 
+syntax enable
+filetype plugin indent on
+let g:ackprg = 'ag --nogroup --nocolor --column'
+
+Plug 'pangloss/vim-javascript'
+Plug 'othree/html5.vim'
+Plug 'evanleck/vim-svelte'
+Plug 'codechips/coc-svelte', {'do': 'npm install'}
+let g:svelte_preprocessors = ['typescript']
 set wrap
 set clipboard=unnamed
 "
@@ -42,6 +53,7 @@ nnoremap <Leader>r :source $MYVIMRC<CR>
 " CTRL+P
 Plug 'ctrlpvim/ctrlp.vim'
 let g:ctrlp_cmd = 'CtrlPMRU'
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 
 " indentation
 set tabstop=4
@@ -192,6 +204,7 @@ function MyNerdToggle()
 endfunction
 
 nnoremap <C-E> :call MyNerdToggle()<CR>
+nnoremap <C-l> :call MyNerdToggle()<CR>
 
 let NERDTreeQuitOnOpen = 1
 let NERDTreeAutoDeleteBuffer = 1
@@ -212,7 +225,10 @@ endfunc
 call plug#end()
 
 " go to file
-nnoremap <C-o> :GFiles<CR>
+nnoremap <C-o> :CtrlP<CR>
+
+" Dont split buffer when opening file from Nerdtree
+let g:ctrlp_dont_split = 'NERD'
 
 " find text in project
 nnoremap <C-F> :Rg<CR>
@@ -224,7 +240,9 @@ let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
 set background=dark
 
-source ~/.vim/colors/custom_color_scheme.vim
+let g:material_theme_style = 'palenight'
+colorscheme material
+" source ~/.vim/colors/custom_color_scheme.vim
 
 highlight colorcolumn ctermbg=0
 
@@ -236,6 +254,6 @@ let g:rainbow_active = 1
 syntax on
 
 " ## SOURCE OTHER FILES
-source ~/Projects/dotfiles/vim/text_search.vim
+" source ~/Projects/dotfiles/vim/text_search.vim
 source ~/Projects/dotfiles/vim/dim_active_window.vim
 source ~/Projects/dotfiles/vim/markdown.vim
