@@ -1,0 +1,5 @@
+#!/bin/zsh
+# Launch the Logseq MCP server with the token from ~/.zshrc.local,
+# so no MCP client config has to store it.
+source ~/.zshrc.local
+exec /opt/homebrew/bin/uv run --quiet --with "mcp<2" --with mcp-logseq mcp-logseq

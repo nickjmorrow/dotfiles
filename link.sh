@@ -20,6 +20,7 @@ link() {
 
 link zshrc           ~/.zshrc
 link global_gitignore ~/.config/git/ignore
+link bin/mcp-logseq  ~/.local/bin/mcp-logseq
 
 if [[ ! -d ~/.oh-my-zsh ]]; then
   git clone --depth 1 https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh
