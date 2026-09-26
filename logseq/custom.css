@@ -22,67 +22,81 @@ html[data-theme="dark"] {
   --ms-sun-faint: rgba(255, 204, 51, 0.08);
 
   /* Logseq design-system variables */
-  --lx-gray-01: var(--ms-navy-950);
-  --lx-gray-02: var(--ms-navy-900);
-  --lx-gray-03: var(--ms-navy-850);
-  --lx-gray-04: var(--ms-navy-800);
-  --lx-gray-05: var(--ms-navy-700);
-  --lx-gray-06: var(--ms-navy-600);
-  --lx-gray-11: var(--ms-text-dim);
-  --lx-gray-12: var(--ms-text);
-  --lx-accent-09: var(--ms-sun);
-  --lx-accent-10: var(--ms-sun-bright);
-  --lx-accent-11: var(--ms-sun);
-  --lx-accent-12: var(--ms-sun-bright);
+  --lx-gray-01: var(--ms-navy-950) !important;
+  --lx-gray-02: var(--ms-navy-900) !important;
+  --lx-gray-03: var(--ms-navy-850) !important;
+  --lx-gray-04: var(--ms-navy-800) !important;
+  --lx-gray-05: var(--ms-navy-700) !important;
+  --lx-gray-06: var(--ms-navy-600) !important;
+  --lx-gray-11: var(--ms-text-dim) !important;
+  --lx-gray-12: var(--ms-text) !important;
+  --lx-accent-09: var(--ms-sun) !important;
+  --lx-accent-10: var(--ms-sun-bright) !important;
+  --lx-accent-11: var(--ms-sun) !important;
+  --lx-accent-12: var(--ms-sun-bright) !important;
 
   /* Legacy variables (still read by much of the UI and by plugins) */
-  --ls-primary-background-color: var(--ms-navy-900);
-  --ls-secondary-background-color: var(--ms-navy-850);
-  --ls-tertiary-background-color: var(--ms-navy-800);
-  --ls-quaternary-background-color: var(--ms-navy-700);
-  --ls-table-tr-even-background-color: var(--ms-navy-850);
-  --ls-border-color: var(--ms-navy-700);
-  --ls-secondary-border-color: var(--ms-navy-600);
-  --ls-tertiary-border-color: var(--ms-navy-800);
-  --ls-primary-text-color: var(--ms-text);
-  --ls-secondary-text-color: var(--ms-text-dim);
-  --ls-title-text-color: var(--ms-text);
-  --ls-icon-color: var(--ms-text-faint);
-  --ls-link-text-color: var(--ms-sun);
-  --ls-link-text-hover-color: var(--ms-sun-bright);
-  --ls-link-ref-text-color: var(--ms-sun);
-  --ls-link-ref-text-hover-color: var(--ms-sun-bright);
-  --ls-tag-text-color: var(--ms-sun);
-  --ls-tag-text-hover-color: var(--ms-sun-bright);
-  --ls-active-primary-color: var(--ms-sun);
-  --ls-active-secondary-color: var(--ms-sun-bright);
-  --ls-block-bullet-color: var(--ms-text-faint);
-  --ls-block-bullet-border-color: var(--ms-navy-700);
-  --ls-block-highlight-color: var(--ms-sun-faint);
-  --ls-selection-background-color: var(--ms-sun-soft);
-  --ls-page-checkbox-color: var(--ms-navy-600);
-  --ls-page-checkbox-border-color: var(--ms-text-faint);
-  --ls-page-blockquote-color: var(--ms-text-dim);
-  --ls-page-blockquote-bg-color: var(--ms-navy-850);
-  --ls-page-blockquote-border-color: var(--ms-sun);
-  --ls-page-inline-code-color: var(--ms-sun-bright);
-  --ls-page-inline-code-bg-color: var(--ms-navy-800);
-  --ls-scrollbar-foreground-color: var(--ms-navy-600);
-  --ls-scrollbar-background-color: transparent;
-  --ls-cloze-text-color: var(--ms-sun);
-  --ls-a-chosen-bg: var(--ms-sun-soft);
-  --ls-focus-ring-color: rgba(255, 204, 51, 0.5);
-  --ls-menu-hover-color: var(--ms-navy-700);
-  --ls-guideline-color: var(--ms-navy-700);
-  --ls-wb-background-color-default: var(--ms-navy-850);
-  --ls-left-sidebar-bg-color: var(--ms-navy-950);
-  --ls-right-sidebar-bg-color: var(--ms-navy-950);
-  --ls-header-background: var(--ms-navy-900);
+  --ls-primary-background-color: var(--ms-navy-900) !important;
+  --ls-secondary-background-color: var(--ms-navy-850) !important;
+  --ls-tertiary-background-color: var(--ms-navy-800) !important;
+  --ls-quaternary-background-color: var(--ms-navy-700) !important;
+  --ls-table-tr-even-background-color: var(--ms-navy-850) !important;
+  --ls-border-color: var(--ms-navy-700) !important;
+  --ls-secondary-border-color: var(--ms-navy-600) !important;
+  --ls-tertiary-border-color: var(--ms-navy-800) !important;
+  --ls-primary-text-color: var(--ms-text) !important;
+  --ls-secondary-text-color: var(--ms-text-dim) !important;
+  --ls-title-text-color: var(--ms-text) !important;
+  --ls-icon-color: var(--ms-text-faint) !important;
+  --ls-link-text-color: var(--ms-sun) !important;
+  --ls-link-text-hover-color: var(--ms-sun-bright) !important;
+  --ls-link-ref-text-color: var(--ms-sun) !important;
+  --ls-link-ref-text-hover-color: var(--ms-sun-bright) !important;
+  --ls-tag-text-color: var(--ms-sun) !important;
+  --ls-tag-text-hover-color: var(--ms-sun-bright) !important;
+  --ls-active-primary-color: var(--ms-sun) !important;
+  --ls-active-secondary-color: var(--ms-sun-bright) !important;
+  --ls-block-bullet-color: var(--ms-text-faint) !important;
+  --ls-block-bullet-border-color: var(--ms-navy-700) !important;
+  --ls-block-highlight-color: var(--ms-sun-faint) !important;
+  --ls-selection-background-color: var(--ms-sun-soft) !important;
+  --ls-page-checkbox-color: var(--ms-navy-600) !important;
+  --ls-page-checkbox-border-color: var(--ms-text-faint) !important;
+  --ls-page-blockquote-color: var(--ms-text-dim) !important;
+  --ls-page-blockquote-bg-color: var(--ms-navy-850) !important;
+  --ls-page-blockquote-border-color: var(--ms-sun) !important;
+  --ls-page-inline-code-color: var(--ms-sun-bright) !important;
+  --ls-page-inline-code-bg-color: var(--ms-navy-800) !important;
+  --ls-scrollbar-foreground-color: var(--ms-navy-600) !important;
+  --ls-scrollbar-background-color: transparent !important;
+  --ls-cloze-text-color: var(--ms-sun) !important;
+  --ls-a-chosen-bg: var(--ms-sun-soft) !important;
+  --ls-focus-ring-color: rgba(255, 204, 51, 0.5) !important;
+  --ls-menu-hover-color: var(--ms-navy-700) !important;
+  --ls-guideline-color: var(--ms-navy-700) !important;
+  --ls-wb-background-color-default: var(--ms-navy-850) !important;
+  --ls-left-sidebar-bg-color: var(--ms-navy-950) !important;
+  --ls-right-sidebar-bg-color: var(--ms-navy-950) !important;
+  --ls-header-background: var(--ms-navy-900) !important;
 
   /* Block-level colors used by Logseq's color picker, nudged to sit on navy */
-  --color-level-1: var(--ms-navy-850);
-  --color-level-2: var(--ms-navy-800);
-  --color-level-3: var(--ms-navy-700);
+  --color-level-1: var(--ms-navy-850) !important;
+  --color-level-2: var(--ms-navy-800) !important;
+  --color-level-3: var(--ms-navy-700) !important;
+
+  /* Radix scale Logseq 2.x derives its grays from */
+  --rx-gray-01: var(--ms-navy-950) !important;
+  --rx-gray-02: var(--ms-navy-900) !important;
+  --rx-gray-03: var(--ms-navy-850) !important;
+  --rx-gray-04: var(--ms-navy-800) !important;
+  --rx-gray-05: var(--ms-navy-700) !important;
+  --rx-gray-06: var(--ms-navy-600) !important;
+  --rx-gray-07: var(--ms-navy-600) !important;
+  --rx-gray-08: var(--ms-text-faint) !important;
+  --rx-gray-09: var(--ms-text-faint) !important;
+  --rx-gray-10: var(--ms-text-dim) !important;
+  --rx-gray-11: var(--ms-text-dim) !important;
+  --rx-gray-12: var(--ms-text) !important;
 
   accent-color: var(--ms-sun);
 }
@@ -128,4 +142,14 @@ html[data-theme="dark"] .ls-block h2 {
 /* Text selection */
 html[data-theme="dark"] ::selection {
   background: var(--ms-sun-soft);
+}
+
+/* Main surfaces, set directly in case a view ignores the variables */
+html[data-theme="dark"] body,
+html[data-theme="dark"] #root,
+html[data-theme="dark"] #app-container,
+html[data-theme="dark"] #main-container,
+html[data-theme="dark"] #main-content-container,
+html[data-theme="dark"] .cp__header {
+  background-color: var(--ms-navy-900) !important;
 }
