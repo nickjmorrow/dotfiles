@@ -1,0 +1,131 @@
+/*
+ * Logseq theme: "Midnight Sun" — navy-tinted dark with a sunshine-yellow accent.
+ * Source of truth: ~/Projects/dotfiles/logseq/custom.css
+ * Apply: Logseq → Settings → General → Custom theme → Edit custom.css, paste, done.
+ * Needs Logseq in dark mode (t t toggles it).
+ */
+
+html[data-theme="dark"] {
+  /* Palette */
+  --ms-navy-950: #0b1120;
+  --ms-navy-900: #0f172a;
+  --ms-navy-850: #131d33;
+  --ms-navy-800: #18233d;
+  --ms-navy-700: #22304f;
+  --ms-navy-600: #2e3f63;
+  --ms-text: #e3e8f2;
+  --ms-text-dim: #9aa8c2;
+  --ms-text-faint: #6b7a96;
+  --ms-sun: #ffcc33;
+  --ms-sun-bright: #ffd95c;
+  --ms-sun-soft: rgba(255, 204, 51, 0.16);
+  --ms-sun-faint: rgba(255, 204, 51, 0.08);
+
+  /* Logseq design-system variables */
+  --lx-gray-01: var(--ms-navy-950);
+  --lx-gray-02: var(--ms-navy-900);
+  --lx-gray-03: var(--ms-navy-850);
+  --lx-gray-04: var(--ms-navy-800);
+  --lx-gray-05: var(--ms-navy-700);
+  --lx-gray-06: var(--ms-navy-600);
+  --lx-gray-11: var(--ms-text-dim);
+  --lx-gray-12: var(--ms-text);
+  --lx-accent-09: var(--ms-sun);
+  --lx-accent-10: var(--ms-sun-bright);
+  --lx-accent-11: var(--ms-sun);
+  --lx-accent-12: var(--ms-sun-bright);
+
+  /* Legacy variables (still read by much of the UI and by plugins) */
+  --ls-primary-background-color: var(--ms-navy-900);
+  --ls-secondary-background-color: var(--ms-navy-850);
+  --ls-tertiary-background-color: var(--ms-navy-800);
+  --ls-quaternary-background-color: var(--ms-navy-700);
+  --ls-table-tr-even-background-color: var(--ms-navy-850);
+  --ls-border-color: var(--ms-navy-700);
+  --ls-secondary-border-color: var(--ms-navy-600);
+  --ls-tertiary-border-color: var(--ms-navy-800);
+  --ls-primary-text-color: var(--ms-text);
+  --ls-secondary-text-color: var(--ms-text-dim);
+  --ls-title-text-color: var(--ms-text);
+  --ls-icon-color: var(--ms-text-faint);
+  --ls-link-text-color: var(--ms-sun);
+  --ls-link-text-hover-color: var(--ms-sun-bright);
+  --ls-link-ref-text-color: var(--ms-sun);
+  --ls-link-ref-text-hover-color: var(--ms-sun-bright);
+  --ls-tag-text-color: var(--ms-sun);
+  --ls-tag-text-hover-color: var(--ms-sun-bright);
+  --ls-active-primary-color: var(--ms-sun);
+  --ls-active-secondary-color: var(--ms-sun-bright);
+  --ls-block-bullet-color: var(--ms-text-faint);
+  --ls-block-bullet-border-color: var(--ms-navy-700);
+  --ls-block-highlight-color: var(--ms-sun-faint);
+  --ls-selection-background-color: var(--ms-sun-soft);
+  --ls-page-checkbox-color: var(--ms-navy-600);
+  --ls-page-checkbox-border-color: var(--ms-text-faint);
+  --ls-page-blockquote-color: var(--ms-text-dim);
+  --ls-page-blockquote-bg-color: var(--ms-navy-850);
+  --ls-page-blockquote-border-color: var(--ms-sun);
+  --ls-page-inline-code-color: var(--ms-sun-bright);
+  --ls-page-inline-code-bg-color: var(--ms-navy-800);
+  --ls-scrollbar-foreground-color: var(--ms-navy-600);
+  --ls-scrollbar-background-color: transparent;
+  --ls-cloze-text-color: var(--ms-sun);
+  --ls-a-chosen-bg: var(--ms-sun-soft);
+  --ls-focus-ring-color: rgba(255, 204, 51, 0.5);
+  --ls-menu-hover-color: var(--ms-navy-700);
+  --ls-guideline-color: var(--ms-navy-700);
+  --ls-wb-background-color-default: var(--ms-navy-850);
+  --ls-left-sidebar-bg-color: var(--ms-navy-950);
+  --ls-right-sidebar-bg-color: var(--ms-navy-950);
+  --ls-header-background: var(--ms-navy-900);
+
+  /* Block-level colors used by Logseq's color picker, nudged to sit on navy */
+  --color-level-1: var(--ms-navy-850);
+  --color-level-2: var(--ms-navy-800);
+  --color-level-3: var(--ms-navy-700);
+
+  accent-color: var(--ms-sun);
+}
+
+/* Sidebars a shade deeper than the page, so the page reads as the surface */
+html[data-theme="dark"] .left-sidebar-inner,
+html[data-theme="dark"] #left-sidebar,
+html[data-theme="dark"] .sidebar-item-list,
+html[data-theme="dark"] #right-sidebar .cp__right-sidebar-inner {
+  background-color: var(--ms-navy-950);
+}
+
+/* Active nav item and hovered menu items pick up the accent */
+html[data-theme="dark"] .left-sidebar-inner .nav-content-item.is-expand .header,
+html[data-theme="dark"] .left-sidebar-inner a.item.active {
+  color: var(--ms-sun);
+}
+
+/* Tasks: DOING/NOW glow yellow, DONE fades */
+html[data-theme="dark"] a.marker-switch,
+html[data-theme="dark"] .doing,
+html[data-theme="dark"] .now {
+  color: var(--ms-sun);
+}
+html[data-theme="dark"] .done .block-content-inner,
+html[data-theme="dark"] .block-content.done {
+  color: var(--ms-text-faint);
+}
+
+/* Checkboxes */
+html[data-theme="dark"] input[type="checkbox"]:checked,
+html[data-theme="dark"] .form-checkbox:checked {
+  background-color: var(--ms-sun);
+  border-color: var(--ms-sun);
+}
+
+/* Headings get a hair of warmth */
+html[data-theme="dark"] .ls-block h1,
+html[data-theme="dark"] .ls-block h2 {
+  color: #f4f6fb;
+}
+
+/* Text selection */
+html[data-theme="dark"] ::selection {
+  background: var(--ms-sun-soft);
+}
