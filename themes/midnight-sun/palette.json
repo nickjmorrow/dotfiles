@@ -1,0 +1,43 @@
+{
+  "name": "Midnight Sun",
+  "description": "Navy-tinted dark with a sunshine-yellow accent. Source of truth for every app's theme; run build.py after editing.",
+  "surface": {
+    "navy950": "#0b1120",
+    "navy900": "#0f172a",
+    "navy850": "#131d33",
+    "navy800": "#18233d",
+    "navy700": "#22304f",
+    "navy600": "#2e3f63"
+  },
+  "text": {
+    "primary": "#e3e8f2",
+    "dim": "#9aa8c2",
+    "faint": "#6b7a96",
+    "bright": "#f4f6fb"
+  },
+  "accent": {
+    "sun": "#ffcc33",
+    "sunBright": "#ffd95c"
+  },
+  "ansi": {
+    "black": "#18233d",
+    "red": "#ff6b6b",
+    "green": "#7ee0a1",
+    "yellow": "#ffcc33",
+    "blue": "#6ea8ff",
+    "magenta": "#c792ea",
+    "cyan": "#5fd3e6",
+    "white": "#c9d1e0",
+    "brightBlack": "#4a5a7a",
+    "brightRed": "#ff8c8c",
+    "brightGreen": "#a2f0bf",
+    "brightYellow": "#ffd95c",
+    "brightBlue": "#93bfff",
+    "brightMagenta": "#dcb0f5",
+    "brightCyan": "#8be6f2",
+    "brightWhite": "#f4f6fb"
+  },
+  "syntax": {
+    "orange": "#ffa657"
+  }
+}

@@ -21,6 +21,12 @@ link() {
 link zshrc           ~/.zshrc
 link global_gitignore ~/.config/git/ignore
 link bin/mcp-logseq  ~/.local/bin/mcp-logseq
+link vscode/settings.json "$HOME/Library/Application Support/Code/User/settings.json"
+
+# Midnight Sun theme (themes/midnight-sun; edit palette.json, run build.py)
+link themes/midnight-sun/vscode ~/.vscode/extensions/nickjmorrow.midnight-sun-1.0.0
+link themes/midnight-sun/iterm-profile.json "$HOME/Library/Application Support/iTerm2/DynamicProfiles/midnight-sun.json"
+defaults write com.googlecode.iterm2 "Default Bookmark Guid" -string "6d1e2a4c-midnight-sun-roland"
 
 if [[ ! -d ~/.oh-my-zsh ]]; then
   git clone --depth 1 https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh

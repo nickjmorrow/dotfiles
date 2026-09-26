@@ -1,12 +1,12 @@
 /*
  * Logseq theme: "Midnight Sun" — navy-tinted dark with a sunshine-yellow accent.
- * Source of truth: ~/Projects/dotfiles/logseq/custom.css
+ * Generated palette from palette.json (run build.py). Rules below are hand-written.
  * Apply: Logseq → Settings → General → Custom theme → Edit custom.css, paste, done.
  * Needs Logseq in dark mode (t t toggles it).
  */
 
 html[data-theme="dark"] {
-  /* Palette */
+  /* palette:start — generated from palette.json by build.py; edit there */
   --ms-navy-950: #0b1120;
   --ms-navy-900: #0f172a;
   --ms-navy-850: #131d33;
@@ -20,6 +20,7 @@ html[data-theme="dark"] {
   --ms-sun-bright: #ffd95c;
   --ms-sun-soft: rgba(255, 204, 51, 0.16);
   --ms-sun-faint: rgba(255, 204, 51, 0.08);
+  /* palette:end */
 
   /* Logseq design-system variables */
   --lx-gray-01: var(--ms-navy-950) !important;

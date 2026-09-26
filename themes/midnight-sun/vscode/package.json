@@ -1,0 +1,18 @@
+{
+  "name": "midnight-sun",
+  "displayName": "Midnight Sun",
+  "description": "Navy-tinted dark with a sunshine-yellow accent. Generated from ../palette.json.",
+  "version": "1.0.0",
+  "publisher": "nickjmorrow",
+  "engines": { "vscode": "^1.80.0" },
+  "categories": ["Themes"],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Midnight Sun",
+        "uiTheme": "vs-dark",
+        "path": "./themes/midnight-sun-color-theme.json"
+      }
+    ]
+  }
+}
