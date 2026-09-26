@@ -1,5 +1,6 @@
 #!/bin/zsh
-# Launch the Logseq MCP server with the token from ~/.zshrc.local,
-# so no MCP client config has to store it.
-source ~/.zshrc.local
-exec /opt/homebrew/bin/uv run --quiet --with "mcp<2" --with mcp-logseq mcp-logseq
+# Local (stdio) Logseq MCP server for Claude Desktop and Claude Code.
+# Runs ~/Projects/logseq-remote/server.py, which reads and writes the graph
+# through the `logseq` CLI. (ergut/mcp-logseq used the HTTP API, which hangs
+# in Logseq 2.0 on pages not loaded in the app window.)
+exec /opt/homebrew/bin/uv run --quiet ~/Projects/logseq-remote/server.py --stdio
