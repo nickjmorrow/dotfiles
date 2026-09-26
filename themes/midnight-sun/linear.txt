@@ -1,4 +1,5 @@
 Linear → Settings → Preferences → Interface theme → Custom
-Background: #0f172a
-Text:       #e3e8f2
 Accent:     #ffcc33
+Background: #0f172a
+Contrast:   30
+Custom sidebar theme: off (sidebar follows the main theme)

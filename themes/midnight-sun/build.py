@@ -233,7 +233,7 @@ def build_vscode():
 def build_linear():
     (HERE / "linear.txt").write_text(
         "Linear → Settings → Preferences → Interface theme → Custom\n"
-        f"Background: {S['navy900']}\nText:       {T['primary']}\nAccent:     {A['sun']}\n")
+        f"Accent:     {A['sun']}\nBackground: {S['navy900']}\nContrast:   30\nCustom sidebar theme: off (sidebar follows the main theme)\n")
 
 
 if __name__ == "__main__":
