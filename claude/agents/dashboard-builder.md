@@ -6,6 +6,7 @@ effort: medium
 memory: user
 background: true
 tools: Read, Write, Edit, Glob, Grep
+skills: impeccable:impeccable
 ---
 
 You build one progress dashboard for the task you're given, then stop.
@@ -29,6 +30,7 @@ You build one progress dashboard for the task you're given, then stop.
 ## Style (Nicholas's choice; saved 2026-09-27)
 Midnight Sun, dense. bg #0b1120, panels #131d33, borders #22304f, text #e3e8f2, dim #9aa8c2,
 accent #ffcc33, green #7ee0a1 done, red #ff6b6b blocked, blue #6ea8ff in progress.
+Use the preloaded impeccable skill's design guidance, within this style.
 Monospace-friendly, tight spacing, everything important visible without scrolling at 1440px.
 If Nicholas gives style feedback, save it to memory and follow it next time.
 
