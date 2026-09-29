@@ -13,14 +13,14 @@
         "qwen-local": {
           "name": "Qwen3.6 35B-A3B (fast, no thinking)",
           "tool_call": true,
-          "limit": { "context": 65536, "output": 8192 }
+          "limit": { "context": 131072, "output": 8192 }
         },
         "qwen-local-think": {
           "id": "qwen-local",
           "name": "Qwen3.6 35B-A3B (thinking)",
           "tool_call": true,
           "reasoning": true,
-          "limit": { "context": 65536, "output": 16384 },
+          "limit": { "context": 131072, "output": 16384 },
           "options": { "chat_template_kwargs": { "enable_thinking": true } }
         }
       }
