@@ -22,6 +22,7 @@ link zshrc           ~/.zshrc
 link global_gitignore ~/.config/git/ignore
 link bin/mcp-logseq  ~/.local/bin/mcp-logseq
 link claude/agents     ~/.claude/agents
+link opencode/opencode.json ~/.config/opencode/opencode.json
 link vscode/settings.json "$HOME/Library/Application Support/Code/User/settings.json"
 
 # Midnight Sun theme (themes/midnight-sun; edit palette.json, run build.py)
