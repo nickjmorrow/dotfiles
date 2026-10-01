@@ -1,6 +1,6 @@
 #!/bin/zsh
 # Local (stdio) Logseq MCP server for Claude Desktop and Claude Code.
-# Runs ~/Projects/roland-remote/server.py, which reads and writes the graph
+# Runs ~/Projects/life-mcp/server/server.py, which reads and writes the graph
 # through the `logseq` CLI. (ergut/mcp-logseq used the HTTP API, which hangs
 # in Logseq 2.0 on pages not loaded in the app window.)
-exec /opt/homebrew/bin/uv run --quiet ~/Projects/roland-remote/server.py --stdio
+exec /opt/homebrew/bin/uv run --quiet ~/Projects/life-mcp/server/server.py --stdio
