@@ -35,4 +35,6 @@ Monospace-friendly, tight spacing, everything important visible without scrollin
 If Nicholas gives style feedback, save it to memory and follow it next time.
 
 ## When done
-Reply with the path to index.html and the state.js schema, in two lines.
+Reply with the path to index.html and the state.js schema, in two lines. Remind the main session that
+it must serve `.dashboard/` over HTTP and open it in the browser pane (a `file://` page can't load
+`state.js` there), not just hand Nicholas the path.
