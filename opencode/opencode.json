@@ -22,8 +22,21 @@
           "reasoning": true,
           "limit": { "context": 131072, "output": 16384 },
           "options": { "chat_template_kwargs": { "enable_thinking": true } }
+        },
+        "venice-local": {
+          "name": "Venice Uncensored 24B (chat, not for coding)",
+          "tool_call": false,
+          "temperature": true,
+          "limit": { "context": 32768, "output": 8192 }
         }
       }
+    }
+  },
+  "mcp": {
+    "readwise": {
+      "type": "remote",
+      "url": "https://mcp2.readwise.io/mcp",
+      "enabled": true
     }
   }
 }
