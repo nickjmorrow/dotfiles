@@ -24,8 +24,8 @@
           "options": { "chat_template_kwargs": { "enable_thinking": true } }
         },
         "venice-local": {
-          "name": "Venice Uncensored 24B (chat, not for coding)",
-          "tool_call": false,
+          "name": "Venice Uncensored 24B (chat, weak coder)",
+          "tool_call": true,
           "temperature": true,
           "limit": { "context": 32768, "output": 8192 }
         }
