@@ -4,3 +4,7 @@
 
 # Claude progress dashboards (dashboard-builder agent)
 .dashboard/
+
+# Git worktrees and Superpowers plan workspaces (agent scratch, never committed)
+.worktrees/
+.superpowers/
