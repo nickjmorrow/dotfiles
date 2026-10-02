@@ -143,4 +143,19 @@ export const register: Register = on => {
 
     return <Box flexDirection="row">{parts}</Box>
   })
+
+  // The desktop app has a slot for a band above its prompt: a Midnight Sun strip there.
+  on('ui.render', { component: 'AbovePrompt' }, ($, e, next) => {
+    if (e.props.hasSurvey || e.surface !== 'desktop') return next(e)
+    const { Box, Text } = $.ui.resolve(e)
+
+    return (
+      <Box flexDirection="row" backgroundColor={NAVY700} paddingX={1}>
+        <Text color={SUN} bold>
+          {'☀ '}
+        </Text>
+        <Text color={DIM}>{e.props.isWorking ? 'shining…' : 'midnight sun'}</Text>
+      </Box>
+    )
+  })
 }
