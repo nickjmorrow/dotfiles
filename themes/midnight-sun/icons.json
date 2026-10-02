@@ -1,5 +1,5 @@
 {
-  "_comment": "Apps on the iPhone home screen that get a Midnight Sun icon, in home-screen order. name = the label under the icon; bundle = the iOS bundle id the shortcut opens. glyph is optional: 'simple:<slug>' (Simple Icons), 'phosphor:<name>' (Phosphor, regular weight) or 'artwork' (the App Store icon, recoloured). Without it the name is matched against Simple Icons titles, then the artwork is used.",
+  "_comment": "Apps on the iPhone home screen that get a Midnight Sun icon, in home-screen order. name = the label under the icon; bundle = the iOS bundle id the shortcut opens. glyph is optional: 'simple:<slug>' (Simple Icons), 'phosphor:<name>' (Phosphor, regular weight) or 'artwork' (the App Store icon, recoloured). Without it the name is matched against Simple Icons titles, then the artwork is used. Private apps and menus go in ~/.config/midnight-sun/icons.local.json (same format). A menu is one icon whose shortcut shows a menu of its apps (a folder stand-in); an app there has a bundle, or a url for a website.",
   "apps": [
     { "name": "Messages",     "bundle": "com.apple.MobileSMS",       "glyph": "phosphor:chat-circle" },
     { "name": "Music",        "bundle": "com.apple.Music",           "glyph": "phosphor:music-notes" },

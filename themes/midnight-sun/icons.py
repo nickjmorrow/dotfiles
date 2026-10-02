@@ -4,6 +4,10 @@ For each app this writes, under ios/ (git-ignored):
   png/<name>.png             1024px square icon (iOS rounds the corners itself)
   shortcuts/<name>.shortcut  signed Shortcuts file whose only action opens the app
 
+Private apps and menus can go in ~/.config/midnight-sun/icons.local.json (same format).
+Each entry in "menus" gets one icon too, whose shortcut shows a menu of its apps: a folder
+stand-in, since iOS folders can't have their own icon.
+
 and copies the PNGs to the iCloud Drive folder "Midnight Sun icons", where the phone's
 "Add to Home Screen" file picker can reach them. A shortcut never changes with the palette,
 so it is only signed again when its app changes.
@@ -20,6 +24,7 @@ import shutil
 import subprocess
 import tempfile
 import time
+import uuid
 import urllib.parse
 import urllib.request
 from pathlib import Path
@@ -28,6 +33,7 @@ HERE = Path(__file__).resolve().parent
 GLYPHS = HERE / "glyphs"
 OUT = HERE / "ios"
 CACHE = OUT / "cache"
+LOCAL = Path.home() / ".config/midnight-sun/icons.local.json"
 ICLOUD = Path.home() / "Library/Mobile Documents/com~apple~CloudDocs/Midnight Sun icons"
 
 SIMPLE_ICONS = "16.33.0"
@@ -119,12 +125,39 @@ def render(svg, out):
         subprocess.run(["resvg", "-w", str(SIZE), "-h", str(SIZE), f.name, str(out)], check=True)
 
 
-def shortcut(app, out):
-    """Sign a one-action shortcut that opens the app; skipped when unchanged."""
-    stamp = out.with_suffix(".bundle")
-    if out.exists() and stamp.exists() and stamp.read_text() == app["bundle"]:
-        return
+def open_app(app):
     selected = {"BundleIdentifier": app["bundle"], "Name": app["name"]}
+    return {"WFWorkflowActionIdentifier": "is.workflow.actions.openapp",
+            "WFWorkflowActionParameters": {"WFAppIdentifier": app["bundle"], "WFSelectedApp": selected}}
+
+
+def open_url(url):
+    text = {"Value": {"string": url, "attachmentsByRange": {}}, "WFSerializationType": "WFTextTokenString"}
+    return {"WFWorkflowActionIdentifier": "is.workflow.actions.openurl",
+            "WFWorkflowActionParameters": {"WFInput": text}}
+
+
+def menu_actions(menu):
+    """Choose from Menu with one item per app, each opening its app (bundle) or website (url)."""
+    group = str(uuid.uuid5(uuid.NAMESPACE_URL, "midnight-sun-menu:" + menu["name"])).upper()
+
+    def step(mode, **params):
+        return {"WFWorkflowActionIdentifier": "is.workflow.actions.choosefrommenu",
+                "WFWorkflowActionParameters": {"GroupingIdentifier": group, "WFControlFlowMode": mode, **params}}
+
+    actions = [step(0, WFMenuPrompt=menu["name"], WFMenuItems=[a["name"] for a in menu["apps"]])]
+    for app in menu["apps"]:
+        target = open_app(app) if "bundle" in app else open_url(app["url"])
+        actions += [step(1, WFMenuItemTitle=app["name"]), target]
+    return actions + [step(2)]
+
+
+def shortcut(name, actions, out):
+    """Sign a shortcut with these actions; skipped when they haven't changed."""
+    stamp = out.with_suffix(".actions")
+    key = json.dumps(actions, sort_keys=True)
+    if out.exists() and stamp.exists() and stamp.read_text() == key:
+        return
     workflow = {
         "WFWorkflowClientVersion": "2607",
         "WFWorkflowMinimumClientVersion": 900,
@@ -133,10 +166,7 @@ def shortcut(app, out):
         "WFWorkflowTypes": [],
         "WFWorkflowInputContentItemClasses": [],
         "WFWorkflowImportQuestions": [],
-        "WFWorkflowActions": [{
-            "WFWorkflowActionIdentifier": "is.workflow.actions.openapp",
-            "WFWorkflowActionParameters": {"WFAppIdentifier": app["bundle"], "WFSelectedApp": selected},
-        }],
+        "WFWorkflowActions": actions,
     }
     out.parent.mkdir(parents=True, exist_ok=True)
     with tempfile.NamedTemporaryFile(suffix=".shortcut") as f:
@@ -150,13 +180,17 @@ def shortcut(app, out):
                 break
             time.sleep(2 * (attempt + 1))
         else:
-            raise SystemExit(f"icons: couldn't sign {app['name']}: {run.stderr.strip()}")
-    stamp.write_text(app["bundle"])
+            raise SystemExit(f"icons: couldn't sign {name}: {run.stderr.strip()}")
+    stamp.write_text(key)
 
 
 def build(palette):
     tile, sun = palette["surface"]["navy900"], palette["accent"]["sun"]
-    apps = json.loads((HERE / "icons.json").read_text())["apps"]
+    config = json.loads((HERE / "icons.json").read_text())
+    apps, menus = config["apps"], config.get("menus", [])
+    if LOCAL.exists():  # private apps and menus, kept out of this public repo
+        local = json.loads(LOCAL.read_text())
+        apps, menus = apps + local.get("apps", []), menus + local.get("menus", [])
     index = {}
 
     def titles():
@@ -169,11 +203,15 @@ def build(palette):
         kind, name = glyph_for(app, titles)
         svg = artwork_svg(app, tile, sun) if kind == "artwork" else tile_svg(kind, name, tile, sun)
         render(svg, OUT / "png" / f"{app['name']}.png")
-        shortcut(app, OUT / "shortcuts" / f"{app['name']}.shortcut")
+        shortcut(app["name"], [open_app(app)], OUT / "shortcuts" / f"{app['name']}.shortcut")
         counts[kind] = counts.get(kind, 0) + 1
+    for menu in menus:
+        kind, name = menu["glyph"].split(":")
+        render(tile_svg(kind, name, tile, sun), OUT / "png" / f"{menu['name']}.png")
+        shortcut(menu["name"], menu_actions(menu), OUT / "shortcuts" / f"{menu['name']}.shortcut")
 
     if ICLOUD.parent.exists():
         ICLOUD.mkdir(exist_ok=True)
         for png in (OUT / "png").glob("*.png"):
             shutil.copy2(png, ICLOUD / png.name)
-    print("icons:", len(apps), "apps", counts)
+    print("icons:", len(apps), "apps", counts, "+", len(menus), "menus")
