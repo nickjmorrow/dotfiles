@@ -6,10 +6,13 @@ Outputs (all committed, so a fresh machine needs no build step):
   iterm-profile.json                      iTerm2 dynamic profile
   vscode/themes/midnight-sun-color-theme.json   VS Code color theme
   linear.txt                              values to enter in Linear's custom theme
+  ios/ (git-ignored)                      iPhone icons + shortcuts, see icons.py
 """
 import json
 import re
 from pathlib import Path
+
+import icons
 
 HERE = Path(__file__).resolve().parent
 P = json.loads((HERE / "palette.json").read_text())
@@ -241,4 +244,5 @@ if __name__ == "__main__":
     build_iterm()
     build_vscode()
     build_linear()
+    icons.build(P)
     print("Built Midnight Sun for Logseq, iTerm2, VS Code and Linear.")

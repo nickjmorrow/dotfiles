@@ -1,0 +1,20 @@
+{
+  "_comment": "Apps on the iPhone home screen that get a Midnight Sun icon, in home-screen order. name = the label under the icon; bundle = the iOS bundle id the shortcut opens. glyph is optional: 'simple:<slug>' (Simple Icons), 'phosphor:<name>' (Phosphor, regular weight) or 'artwork' (the App Store icon, recoloured). Without it the name is matched against Simple Icons titles, then the artwork is used.",
+  "apps": [
+    { "name": "Messages",     "bundle": "com.apple.MobileSMS",       "glyph": "phosphor:chat-circle" },
+    { "name": "Music",        "bundle": "com.apple.Music",           "glyph": "phosphor:music-notes" },
+    { "name": "Firefox",      "bundle": "org.mozilla.ios.Firefox",   "glyph": "simple:firefoxbrowser" },
+    { "name": "Logseq",       "bundle": "com.logseq.logseq" },
+    { "name": "Hue",          "bundle": "com.philips.lighting.hue2", "glyph": "simple:philipshue" },
+    { "name": "Gmail",        "bundle": "com.google.Gmail" },
+    { "name": "Reader",       "bundle": "io.readwise.read",          "glyph": "phosphor:book-open-text" },
+    { "name": "Wikipedia",    "bundle": "org.wikimedia.wikipedia" },
+    { "name": "Google Maps",  "bundle": "com.google.Maps" },
+    { "name": "Fog of World", "bundle": "com.ollix.FogOfWorld",      "glyph": "phosphor:globe-hemisphere-west" },
+    { "name": "Eight Sleep",  "bundle": "com.eightsleep.Eight" },
+    { "name": "Reminders",    "bundle": "com.apple.reminders",       "glyph": "phosphor:list-checks" },
+    { "name": "Immich",       "bundle": "app.alextran.immich" },
+    { "name": "Linear",       "bundle": "com.linear.ios" },
+    { "name": "Hevy",         "bundle": "com.hevyapp.hevy" }
+  ]
+}
