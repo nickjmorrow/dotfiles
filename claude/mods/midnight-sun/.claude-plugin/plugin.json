@@ -1,8 +1,0 @@
-{
-  "name": "midnight-sun",
-  "version": "0.1.0",
-  "description": "Restyles Claude Code's transcript, spinner and prompt area in the Midnight Sun palette (navy + sunshine yellow).",
-  "author": {
-    "name": "Nicholas Morrow"
-  }
-}
