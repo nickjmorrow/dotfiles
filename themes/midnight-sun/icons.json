@@ -3,7 +3,7 @@
   "apps": [
     { "name": "Messages",     "bundle": "com.apple.MobileSMS",       "glyph": "phosphor:chat-circle" },
     { "name": "Music",        "bundle": "com.apple.Music",           "glyph": "phosphor:music-notes" },
-    { "name": "Firefox",      "bundle": "org.mozilla.ios.Firefox",   "glyph": "simple:firefoxbrowser" },
+    { "name": "Firefox",      "bundle": "org.mozilla.ios.Firefox",   "glyph": "custom:raccoon" },
     { "name": "Logseq",       "bundle": "com.logseq.logseq" },
     { "name": "Hue",          "bundle": "com.philips.lighting.hue2", "glyph": "simple:philipshue" },
     { "name": "Gmail",        "bundle": "com.google.Gmail" },
