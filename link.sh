@@ -20,7 +20,6 @@ link() {
 
 link zshrc           ~/.zshrc
 link global_gitignore ~/.config/git/ignore
-link bin/mcp-logseq  ~/.local/bin/mcp-logseq
 link claude/agents     ~/.claude/agents
 link opencode/opencode.json ~/.config/opencode/opencode.json
 link skhd/skhdrc        ~/.config/skhd/skhdrc
