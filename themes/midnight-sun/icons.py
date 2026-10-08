@@ -4,7 +4,7 @@ For each app this writes, under ios/ (git-ignored):
   png/<name>.png             1024px square icon (iOS rounds the corners itself)
   shortcuts/<name>.shortcut  signed Shortcuts file whose only action opens the app
 
-Private apps and menus can go in ~/.config/midnight-sun/icons.local.json (same format).
+An entry with "webapp": true gets only the picture (no shortcut), for a web app added from Safari. Private apps and menus can go in ~/.config/midnight-sun/icons.local.json (same format).
 Each entry in "menus" gets one icon too, whose shortcut shows a menu of its apps: a folder
 stand-in, since iOS folders can't have their own icon.
 
@@ -205,7 +205,8 @@ def build(palette):
         kind, name = glyph_for(app, titles)
         svg = artwork_svg(app, tile, sun) if kind == "artwork" else tile_svg(kind, name, tile, sun)
         render(svg, OUT / "png" / f"{app['name']}.png")
-        shortcut(app["name"], [open_app(app)], OUT / "shortcuts" / f"{app['name']}.shortcut")
+        if not app.get("webapp"):  # a web app is added from Safari and only needs the picture
+            shortcut(app["name"], [open_app(app)], OUT / "shortcuts" / f"{app['name']}.shortcut")
         counts[kind] = counts.get(kind, 0) + 1
     for menu in menus:
         kind, name = menu["glyph"].split(":")

@@ -5,7 +5,7 @@
     { "name": "Music",        "bundle": "com.apple.Music",           "glyph": "phosphor:music-notes" },
     { "name": "Firefox",      "bundle": "org.mozilla.ios.Firefox",   "glyph": "custom:raccoon" },
     { "name": "Logseq",       "bundle": "com.logseq.logseq" },
-    { "name": "Hue",          "bundle": "com.philips.lighting.hue2", "glyph": "simple:philipshue" },
+    { "name": "Hue",          "bundle": "com.philips.lighting.hue2", "glyph": "custom:candle" },
     { "name": "Gmail",        "bundle": "com.google.Gmail" },
     { "name": "Reader",       "bundle": "io.readwise.read",          "glyph": "phosphor:book-open-text" },
     { "name": "Wikipedia",    "bundle": "org.wikimedia.wikipedia" },
@@ -15,6 +15,7 @@
     { "name": "Reminders",    "bundle": "com.apple.reminders",       "glyph": "phosphor:list-checks" },
     { "name": "Immich",       "bundle": "app.alextran.immich" },
     { "name": "Linear",       "bundle": "com.linear.ios" },
-    { "name": "Hevy",         "bundle": "com.hevyapp.hevy" }
+    { "name": "Hevy",         "bundle": "com.hevyapp.hevy" },
+    { "name": "Infuse",       "bundle": "com.firecore.infuse", "glyph": "phosphor:play-circle" }
   ]
 }
