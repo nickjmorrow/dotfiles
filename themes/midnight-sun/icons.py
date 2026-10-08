@@ -186,29 +186,6 @@ def shortcut(name, actions, out):
     stamp.write_text(key)
 
 
-def web_clip(name, png):
-    """One home-screen icon (a Web Clip) that runs the app's shortcut and wears the Midnight Sun PNG."""
-    url = "shortcuts://run-shortcut?name=" + urllib.parse.quote(name)
-    return {"PayloadType": "com.apple.webClip.managed", "PayloadVersion": 1,
-            "PayloadIdentifier": f"app.midnightsun.icon.{re.sub(r'[^a-z0-9]+', '-', name.lower())}",
-            "PayloadUUID": str(uuid.uuid5(uuid.NAMESPACE_URL, "midnight-sun-clip:" + name)).upper(),
-            "PayloadDisplayName": name, "Label": name, "URL": url, "FullScreen": True,
-            "IsRemovable": True, "Icon": png.read_bytes()}
-
-
-def profile(names, out, title):
-    """A configuration profile holding these icons. Installing it again replaces the icons, so a
-    palette change is one install instead of re-adding each icon by hand. Installed by hand on the
-    phone (Settings > Profile Downloaded), unsigned: no MDM or push certificate needed."""
-    clips = [web_clip(n, OUT / "png" / f"{n}.png") for n in names]
-    ident = "app.midnightsun.icons." + re.sub(r"[^a-z0-9]+", "-", title.lower())
-    plist = {"PayloadType": "Configuration", "PayloadVersion": 1, "PayloadIdentifier": ident,
-             "PayloadUUID": str(uuid.uuid5(uuid.NAMESPACE_URL, ident)).upper(),
-             "PayloadDisplayName": f"Midnight Sun: {title}", "PayloadContent": clips}
-    out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_bytes(plistlib.dumps(plist))
-
-
 def build(palette):
     tile, sun = palette["surface"]["navy900"], palette["accent"]["sun"]
     config = json.loads((HERE / "icons.json").read_text())
@@ -235,14 +212,9 @@ def build(palette):
         render(tile_svg(kind, name, tile, sun), OUT / "png" / f"{menu['name']}.png")
         shortcut(menu["name"], menu_actions(menu), OUT / "shortcuts" / f"{menu['name']}.shortcut")
 
-    names = [a["name"] for a in apps] + [m["name"] for m in menus]
-    profile(names, OUT / "profiles" / "midnight-sun-all.mobileconfig", "all icons")
-    for name in names:  # one per icon, to try a single icon without doubling up the rest
-        profile([name], OUT / "profiles" / "single" / f"{name}.mobileconfig", name)
 
     if ICLOUD.parent.exists():
         ICLOUD.mkdir(exist_ok=True)
         for png in (OUT / "png").glob("*.png"):
             shutil.copy2(png, ICLOUD / png.name)
-        shutil.copytree(OUT / "profiles", ICLOUD / "profiles", dirs_exist_ok=True)
     print("icons:", len(apps), "apps", counts, "+", len(menus), "menus")
