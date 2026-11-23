@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 120 120">
+<rect x="0" y="0" width="120" height="120" fill="#161b2e"/>
+<g fill="none" stroke="#c9a85c" stroke-linecap="round">
+ <circle cx="60" cy="60" r="46" stroke-width=".9"/>
+ <circle cx="60" cy="60" r="42" stroke-width="3.5" stroke-dasharray=".9 6.43" opacity=".85"/>
+ <circle cx="60" cy="60" r="38" stroke-width=".5" opacity=".5"/>
+ <g stroke-width=".8" opacity=".9"><path d="M72.29 14.12 L72.81 12.19"/><path d="M83.75 18.86 L84.75 17.13"/><path d="M93.59 26.41 L95.00 25.00"/><path d="M101.14 36.25 L102.87 35.25"/><path d="M105.88 47.71 L107.81 47.19"/><path d="M107.50 60.00 L111.50 60.00"/><path d="M105.88 72.29 L107.81 72.81"/><path d="M101.14 83.75 L102.87 84.75"/><path d="M93.59 93.59 L95.00 95.00"/><path d="M83.75 101.14 L84.75 102.87"/><path d="M72.29 105.88 L72.81 107.81"/><path d="M60.00 107.50 L60.00 111.50"/><path d="M47.71 105.88 L47.19 107.81"/><path d="M36.25 101.14 L35.25 102.87"/><path d="M26.41 93.59 L25.00 95.00"/><path d="M18.86 83.75 L17.13 84.75"/><path d="M14.12 72.29 L12.19 72.81"/><path d="M12.50 60.00 L8.50 60.00"/><path d="M14.12 47.71 L12.19 47.19"/><path d="M18.86 36.25 L17.13 35.25"/><path d="M26.41 26.41 L25.00 25.00"/><path d="M36.25 18.86 L35.25 17.13"/><path d="M47.71 14.12 L47.19 12.19"/></g>
+ <polygon points="60.00,26.00 94.00,60.00 60.00,94.00 26.00,60.00" stroke-width=".8" stroke-linejoin="round" opacity=".9"/><polygon points="84.04,35.96 84.04,84.04 35.96,84.04 35.96,35.96" stroke-width=".8" stroke-linejoin="round" opacity=".9"/>
+</g>
+<path d="M60 4.5 L64.5 12 H55.5 Z" fill="#161b2e" stroke="#c9a85c" stroke-width="1" stroke-linejoin="round"/>
+<g fill="#c9a85c"><circle cx="60.00" cy="26.00" r="1.4"/><circle cx="94.00" cy="60.00" r="1.4"/><circle cx="60.00" cy="94.00" r="1.4"/><circle cx="26.00" cy="60.00" r="1.4"/></g><g fill="none" stroke="#e8dcc0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+<path d="M39 78 L51 55 L58.5 67 L68 49 L82 78 Z" fill="#161b2e"/><path d="M68 49 V40.5" stroke-width="1.1"/><g stroke-width="1.2"><path d="M36 71.5 H62 M67 71.5 H84" stroke="#161b2e" stroke-width="4"/><path d="M36 71.5 H62 M67 71.5 H84"/><path d="M42 84 H78 M50 89 H70" opacity=".85"/></g>
+</g>
+<path d="M68 40.5 L75 43.2 L68 46 Z" fill="#cf6f45"/>
+</svg>
