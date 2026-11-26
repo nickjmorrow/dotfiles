@@ -8,3 +8,5 @@
 # Git worktrees and Superpowers plan workspaces (agent scratch, never committed)
 .worktrees/
 .superpowers/
+
+**/.claude/settings.local.json

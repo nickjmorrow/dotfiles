@@ -63,6 +63,7 @@ def build_iterm():
         "Guid": "6d1e2a4c-midnight-sun-roland",
         "Dynamic Profile Parent Name": "Default",
         "Normal Font": "FiraCodeNerdFontMono-Regular 14",
+        "Option Key Sends": 2,  # left Option acts as Meta (Esc+), for Option+P etc.
         "Background Color": iterm_color(S["navy900"]),
         "Foreground Color": iterm_color(T["primary"]),
         "Bold Color": iterm_color(T["bright"]),

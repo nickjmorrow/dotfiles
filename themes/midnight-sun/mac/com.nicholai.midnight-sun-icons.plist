@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- Re-applies the Midnight Sun app icons when an app is updated (see apply-icons.sh). Symlinked into
+     ~/Library/LaunchAgents by link.sh. Keep WatchPaths in step with the app list in apply-icons.sh. -->
+<plist version="1.0">
+<dict>
+  <key>Label</key><string>com.nicholai.midnight-sun-icons</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/zsh</string>
+    <string>/Users/nicholasmorrow/Projects/dotfiles/themes/midnight-sun/mac/apply-icons.sh</string>
+  </array>
+  <key>RunAtLoad</key><true/>
+  <key>StartInterval</key><integer>3600</integer>
+  <key>WatchPaths</key>
+  <array>
+    <string>/Applications/Firefox.app</string>
+    <string>/Applications/Claude.app</string>
+    <string>/Applications/iTerm.app</string>
+    <string>/Applications/Discord.app</string>
+    <string>/Applications/Linear.app</string>
+    <string>/Applications/Logseq.app</string>
+    <string>/Applications/Signal.app</string>
+    <string>/Applications/Spotify.app</string>
+    <string>/Applications/Sync.app</string>
+    <string>/Applications/Google Chrome.app</string>
+    <string>/Applications/Visual Studio Code.app</string>
+  </array>
+  <key>StandardOutPath</key><string>/Users/nicholasmorrow/Library/Logs/midnight-sun-icons.log</string>
+  <key>StandardErrorPath</key><string>/Users/nicholasmorrow/Library/Logs/midnight-sun-icons.log</string>
+</dict>
+</plist>

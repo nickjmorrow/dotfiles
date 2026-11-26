@@ -28,7 +28,17 @@ link vscode/settings.json "$HOME/Library/Application Support/Code/User/settings.
 # Midnight Sun theme (themes/midnight-sun; edit palette.json, run build.py)
 link themes/midnight-sun/vscode ~/.vscode/extensions/nickjmorrow.midnight-sun-1.0.0
 link themes/midnight-sun/iterm-profile.json "$HOME/Library/Application Support/iTerm2/DynamicProfiles/midnight-sun.json"
-defaults write com.googlecode.iterm2 "Default Bookmark Guid" -string "6d1e2a4c-midnight-sun-roland"
+# Mac app icons: a LaunchAgent re-applies them after apps update (see themes/midnight-sun/README.md).
+# Not on a work Mac (mac-setup's `setup.sh --work` writes this file): no background job rewriting app icons there.
+if [[ "$(cat ~/.config/mac-setup/profile 2>/dev/null)" != work ]]; then
+  link themes/midnight-sun/mac/com.nicholai.midnight-sun-icons.plist ~/Library/LaunchAgents/com.nicholai.midnight-sun-icons.plist
+  if ! launchctl print "gui/$UID/com.nicholai.midnight-sun-icons" >/dev/null 2>&1; then
+    launchctl bootstrap "gui/$UID" ~/Library/LaunchAgents/com.nicholai.midnight-sun-icons.plist
+  fi
+fi
+# Night: warm, low-contrast iTerm profile (iterm/night.json), the default
+link iterm/night.json "$HOME/Library/Application Support/iTerm2/DynamicProfiles/night.json"
+defaults write com.googlecode.iterm2 "Default Bookmark Guid" -string "night-roland"
 
 if [[ ! -d ~/.oh-my-zsh ]]; then
   git clone --depth 1 https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh

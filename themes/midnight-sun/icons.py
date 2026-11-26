@@ -82,6 +82,11 @@ def glyph_svg(kind, name):
     return cached(GLYPHS / kind / f"{name}.svg", url).decode()
 
 
+def plate_svg(name):
+    """A full-tile engraved plate from glyphs/plates/, drawn as is: it carries its own colours."""
+    return (GLYPHS / "plates" / f"{name}.svg").read_text()
+
+
 def tile_svg(kind, name, tile, sun):
     src = glyph_svg(kind, name)
     view_box = re.search(r'viewBox="([^"]+)"', src).group(1)
@@ -203,14 +208,20 @@ def build(palette):
     counts = {}
     for app in apps:
         kind, name = glyph_for(app, titles)
-        svg = artwork_svg(app, tile, sun) if kind == "artwork" else tile_svg(kind, name, tile, sun)
+        if kind == "plate":
+            svg = plate_svg(name)
+        elif kind == "artwork":
+            svg = artwork_svg(app, tile, sun)
+        else:
+            svg = tile_svg(kind, name, tile, sun)
         render(svg, OUT / "png" / f"{app['name']}.png")
         if not app.get("webapp"):  # a web app is added from Safari and only needs the picture
             shortcut(app["name"], [open_app(app)], OUT / "shortcuts" / f"{app['name']}.shortcut")
         counts[kind] = counts.get(kind, 0) + 1
     for menu in menus:
         kind, name = menu["glyph"].split(":")
-        render(tile_svg(kind, name, tile, sun), OUT / "png" / f"{menu['name']}.png")
+        svg = plate_svg(name) if kind == "plate" else tile_svg(kind, name, tile, sun)
+        render(svg, OUT / "png" / f"{menu['name']}.png")
         shortcut(menu["name"], menu_actions(menu), OUT / "shortcuts" / f"{menu['name']}.shortcut")
 
 
