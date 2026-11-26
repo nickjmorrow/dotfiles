@@ -25,7 +25,7 @@
     "#1b1830"
   ],
   "plates": {
-    "cauldron": "fire", "claude": "fire", "firefox": "fire", "hevy": "fire", "linear": "fire", "hue": "fire", "forge": "fire", "ledger": "earth", "hoard": "earth", "sprig": "earth", "tend": "earth", "vscode": "earth", "practice": "water", "iterm2": "earth", "fogofworld": "water", "maps": "earth", "reminders": "earth", "haunt": "water", "coinbox": "earth", "chrome": "fire", "gmail": "air", "logseq": "air", "messages": "air", "reader": "air", "tarot": "air", "wikipedia": "air", "x": "air", "omen": "air", "stacks": "air", "eightsleep": "water", "immich": "water", "music": "water", "rings": "water", "infuse": "water"
+    "cauldron": "fire", "claude": "fire", "firefox": "fire", "hevy": "fire", "linear": "fire", "hue": "fire", "forge": "fire", "ledger": "earth", "hoard": "earth", "sprig": "earth", "tend": "earth", "vscode": "earth", "practice": "water", "iterm2": "earth", "fogofworld": "water", "maps": "earth", "reminders": "earth", "haunt": "water", "coinbox": "earth", "chrome": "fire", "gmail": "air", "logseq": "air", "messages": "air", "reader": "air", "tarot": "air", "wikipedia": "air", "x": "air", "omen": "air", "stacks": "air", "eightsleep": "water", "immich": "water", "music": "water", "rings": "water", "infuse": "water", "slack": "fire", "fantastical": "fire", "tailscale": "fire", "sync": "earth", "bitwarden": "earth", "discord": "air", "signal": "air", "spotify": "water", "almanac": "water"
   },
   "apps": {
     "cauldron": ["cauldron/app/icon.svg", "cauldron/app/apple-icon.png", "cauldron/apple/iOS/Assets.xcassets/AppIcon.appiconset", "cauldron/apple/Watch/Assets.xcassets/AppIcon.appiconset", "cauldron/apple/Mac/Assets.xcassets/AppIcon.appiconset"],
@@ -39,7 +39,8 @@
     "tend": ["tend/design/tend-plate.svg", "tend/App/iOS/Assets.xcassets/AppIcon.appiconset", "tend/App/Mac/Assets.xcassets/AppIcon.appiconset"],
     "omen": ["omen/design/icon/omen-plate.svg", "omen/Omen/Assets.xcassets/AppIcon.appiconset"],
     "tarot": ["tarot/design/tarot-plate.svg", "tarot/app/Tarot/Assets.xcassets/AppIcon.appiconset"],
-    "stacks": ["stacks/app/Stacks/Assets.xcassets/AppIcon.appiconset"]
+    "stacks": ["stacks/app/Stacks/Assets.xcassets/AppIcon.appiconset"],
+    "almanac": ["almanac/Almanac/Assets.xcassets/AppIcon.appiconset"]
   },
   "allow": {
     "chrome": [

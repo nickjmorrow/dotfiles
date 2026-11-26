@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 120 120">
+<rect x="0" y="0" width="120" height="120" fill="#161b2e"/>
+<g fill="none" stroke-linecap="round"><circle cx="60" cy="60" r="46" stroke="#c9a85c" stroke-width=".9"/><circle cx="60" cy="60" r="43.2" stroke="#8fb3d9" stroke-width=".5" opacity=".8"/></g>
+<circle cx="60" cy="60" r="35" fill="none" stroke="#8fb3d9" stroke-width="1.5" stroke-dasharray=".1 7.754" stroke-linecap="round" transform="rotate(-90 60 60)"/>
+<g stroke="#c9a85c" stroke-width=".8" stroke-linecap="round"><path d="M33.62 97.68 L31.55 100.63 M86.38 97.68 L88.45 100.63"/><circle cx="30.17" cy="102.6" r="2.2" fill="#161b2e"/><circle cx="89.83" cy="102.6" r="2.2" fill="#161b2e"/></g>
+<g id="marker"><path d="M60 2.5 A6 6 0 1 0 60 14.5 A7.5 7.5 0 0 1 60 2.5 Z" fill="#e8dcc0" transform="rotate(-20 60 8.5)"/></g>
+<circle cx="60" cy="60" r="25" fill="#161b2e" stroke="#e8dcc0" stroke-width="1.5"/>
+<g fill="#c9a85c"><circle cx="35" cy="60" r="1.5"/><circle cx="85" cy="60" r="1.5"/><circle cx="60" cy="85" r="1.5"/></g>
+<path d="M60 39 A5.5 5.5 0 1 0 60 50 A7 7 0 0 1 60 39 Z" fill="#e8dcc0" transform="translate(1.5 0)"/>
+<g fill="none" stroke="#e8dcc0" stroke-width="1.2" stroke-linecap="round"><path d="M60 68.5 V72 M60 55.5 V54 M51.5 62 H48 M68.5 62 H72 M54 68 L51.5 70.5 M66 68 L68.5 70.5 M54 56 L51.5 53.5 M66 56 L68.5 53.5"/></g>
+<circle cx="60" cy="62" r="4" fill="#cf6f45"/>
+</svg>

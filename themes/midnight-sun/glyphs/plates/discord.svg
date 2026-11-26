@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 120 120">
+<rect x="0" y="0" width="120" height="120" fill="#33290f"/>
+<circle cx="60" cy="60" r="46" fill="none" stroke="#b8b4d8" stroke-width="0.9"/>
+<circle cx="60" cy="60" r="42" fill="none" stroke="#c9a85c" stroke-width="1.1" stroke-linecap="round" stroke-dasharray="31.98 12" stroke-dashoffset="-6.00" opacity="1" transform="rotate(-60 60 60)"/>
+<path d="M60.00 31.00 L78.50 27.96 L85.11 45.50 L97.00 60.00 L85.11 74.50 L78.50 92.04 L60.00 89.00 L41.50 92.04 L34.89 74.50 L23.00 60.00 L34.89 45.50 L41.50 27.96 Z" fill="none" stroke="#c9a85c" stroke-width=".6" stroke-linejoin="round" opacity=".85"/>
+<g fill="#c9a85c"><circle cx="60.00" cy="31.00" r="1.4"/><circle cx="78.50" cy="27.96" r="1.4"/><circle cx="85.11" cy="45.50" r="1.4"/><circle cx="97.00" cy="60.00" r="1.4"/><circle cx="85.11" cy="74.50" r="1.4"/><circle cx="78.50" cy="92.04" r="1.4"/><circle cx="60.00" cy="89.00" r="1.4"/><circle cx="41.50" cy="92.04" r="1.4"/><circle cx="34.89" cy="74.50" r="1.4"/><circle cx="23.00" cy="60.00" r="1.4"/><circle cx="34.89" cy="45.50" r="1.4"/><circle cx="41.50" cy="27.96" r="1.4"/></g>
+<g id="marker"><path d="M60 2.5 L61.3 6.7 L65.5 8 L61.3 9.3 L60 13.5 L58.7 9.3 L54.5 8 L58.7 6.7 Z" fill="#e8dcc0"/></g>
+<g fill="none" stroke="#e8dcc0" stroke-linecap="round" stroke-linejoin="round"><path d="M60.00 41.00 L76.45 50.50 L76.45 69.50 L60.00 79.00 L43.55 69.50 L43.55 50.50 Z" fill="#33290f" stroke-width="1.6"/><path d="M60.00 41.00 L50.50 54.50 M60.00 41.00 L69.50 54.50 M76.45 50.50 L69.50 54.50 M43.55 50.50 L50.50 54.50 M76.45 69.50 L69.50 54.50 M43.55 69.50 L50.50 54.50 M76.45 69.50 L60.00 71.00 M43.55 69.50 L60.00 71.00 M60.00 79.00 L60.00 71.00" stroke-width=".9"/><path d="M50.50 54.50 L69.50 54.50 L60.00 71.00 Z" stroke-width="1.4"/></g>
+<circle cx="60" cy="60" r="2.6" fill="#cf6f45"/>
+</svg>
