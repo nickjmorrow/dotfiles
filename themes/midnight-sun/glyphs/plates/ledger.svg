@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 120 120">
+<rect x="0" y="0" width="120" height="120" fill="#0f2321"/>
+<g fill="none" stroke="#c9a85c" stroke-linecap="round">
+ <circle cx="60" cy="60" r="46" stroke-width=".9"/>
+ <circle cx="60" cy="60" r="42" stroke-width="3.5" stroke-dasharray=".9 6.43" opacity=".85"/>
+ <circle cx="60" cy="60" r="38" stroke-width=".5" opacity=".5"/>
+ <g stroke-width=".8" opacity=".9"><path d="M108.00 60.00 L112.00 60.00"/><path d="M106.36 72.42 L108.78 73.07"/><path d="M101.57 84.00 L103.73 85.25"/><path d="M93.94 93.94 L96.77 96.77"/><path d="M84.00 101.57 L85.25 103.73"/><path d="M72.42 106.36 L73.07 108.78"/><path d="M60.00 108.00 L60.00 112.00"/><path d="M47.58 106.36 L46.93 108.78"/><path d="M36.00 101.57 L34.75 103.73"/><path d="M26.06 93.94 L23.23 96.77"/><path d="M18.43 84.00 L16.27 85.25"/><path d="M13.64 72.42 L11.22 73.07"/><path d="M12.00 60.00 L8.00 60.00"/><path d="M13.64 47.58 L11.22 46.93"/><path d="M18.43 36.00 L16.27 34.75"/><path d="M26.06 26.06 L23.23 23.23"/><path d="M36.00 18.43 L34.75 16.27"/><path d="M47.58 13.64 L46.93 11.22"/><path d="M72.42 13.64 L73.07 11.22"/><path d="M84.00 18.43 L85.25 16.27"/><path d="M93.94 26.06 L96.77 23.23"/><path d="M101.57 36.00 L103.73 34.75"/><path d="M106.36 47.58 L108.78 46.93"/></g>
+ <polygon points="29,36 91,36 60,94" stroke-width=".8" stroke-linejoin="round" opacity=".9"/>
+ <path d="M50.4 76 H69.6" stroke-width=".8" opacity=".9"/>
+</g>
+<path d="M60 5 L64 12 H56 Z" fill="#0f2321" stroke="#c9a85c" stroke-width="1" stroke-linejoin="round"/>
+<g fill="#c9a85c"><circle cx="29.0" cy="36" r="1.4"/><circle cx="91.0" cy="36" r="1.4"/><circle cx="60.0" cy="94" r="1.4"/><circle cx="50.4" cy="76" r="1.4"/><circle cx="69.6" cy="76" r="1.4"/></g>
+<g fill="none" stroke="#e8dcc0" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+ <path d="M60 46 V83"/>
+ <path d="M49 85 H71 M52 85 L55.5 80.5 H64.5 L68 85" fill="#0f2321"/>
+ <path d="M36 48 H84"/>
+ <path d="M36 48 L28 66 M36 48 L44 66" stroke-width="1"/><path d="M26 66 Q36 74 46 66 Z" fill="#0f2321"/><path d="M84 48 L76 66 M84 48 L92 66" stroke-width="1"/><path d="M74 66 Q84 74 94 66 Z" fill="#0f2321"/>
+</g>
+<path d="M60 38 L63 42.5 L60 47 L57 42.5 Z" fill="#cf6f45"/>
+</svg>
