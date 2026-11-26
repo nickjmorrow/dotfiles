@@ -1,0 +1,38 @@
+{
+  "_note": "Which element each plate belongs to, and each element's colours. The rules live in the plate-icons skill; plates.py reads this file to retile, lint and draw contact sheets. 'allow' lists extra colours one plate may use.",
+  "ink": {
+    "brass": "#c9a85c", "cream": "#e8dcc0", "vermilion": "#cf6f45"
+  },
+  "elements": {
+    "fire": {
+      "tile": "#2a1518",
+      "second": null
+    },
+    "earth": {
+      "tile": "#0f2321",
+      "second": "#6aa89a"
+    },
+    "air": {
+      "tile": "#33290f",
+      "second": "#b8b4d8"
+    },
+    "water": {
+      "tile": "#161b2e",
+      "second": "#8fb3d9"
+    }
+  },
+  "old_tiles": [
+    "#1b1830"
+  ],
+  "plates": {
+    "cauldron": "fire", "claude": "fire", "firefox": "fire", "hevy": "fire", "linear": "fire", "hue": "fire", "ledger": "earth", "hoard": "earth", "sprig": "earth", "tend": "earth", "vscode": "earth", "practice": "earth", "iterm2": "earth", "fogofworld": "earth", "maps": "earth", "reminders": "earth", "haunt": "earth", "chrome": "air", "gmail": "air", "logseq": "air", "messages": "air", "reader": "air", "tarot": "air", "wikipedia": "air", "x": "air", "omen": "air", "eightsleep": "water", "immich": "water", "music": "water", "rings": "water", "infuse": "water"
+  },
+  "allow": {
+    "chrome": [
+      "#6aa89a"
+    ]
+  },
+  "no_ring": {
+    "x": "a square frame is the design"
+  }
+}

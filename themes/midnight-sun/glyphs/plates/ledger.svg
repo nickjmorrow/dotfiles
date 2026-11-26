@@ -8,7 +8,7 @@
  <polygon points="29,36 91,36 60,94" stroke-width=".8" stroke-linejoin="round" opacity=".9"/>
  <path d="M50.4 76 H69.6" stroke-width=".8" opacity=".9"/>
 </g>
-<path d="M60 5 L64 12 H56 Z" fill="#0f2321" stroke="#c9a85c" stroke-width="1" stroke-linejoin="round"/>
+<g id="marker"><path d="M60 3 L64 8.5 L60 14 L56 8.5 Z" fill="#0f2321" stroke="#c9a85c" stroke-width="1" stroke-linejoin="round"/></g>
 <g fill="#c9a85c"><circle cx="29.0" cy="36" r="1.4"/><circle cx="91.0" cy="36" r="1.4"/><circle cx="60.0" cy="94" r="1.4"/><circle cx="50.4" cy="76" r="1.4"/><circle cx="69.6" cy="76" r="1.4"/></g>
 <g fill="none" stroke="#e8dcc0" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
  <path d="M60 46 V83"/>
