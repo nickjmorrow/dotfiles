@@ -9,6 +9,9 @@
                                  revision's version sits beside today's
   plates.py mac [name ...]       draw mac/<name>.png (824 px tile, radius 185, on 1024 with a soft shadow)
                                  for every plate that already has a PNG there (or the ones named)
+  plates.py export [name ...]    write a plate into his own apps' icon files (the "apps" map in elements.json,
+                                 paths under ~/Projects): icon sets, web icons, the repo's copy of the plate.
+                                 It only writes files; committing, building and deploying each app is separate.
 
 Which element a plate has, and each element's colours, are in glyphs/plates/elements.json.
 The rules themselves (shapes, rings, markers, the diagram grammar) are in the plate-icons skill; lint
@@ -198,31 +201,119 @@ def sheet(args):
 
 # ---- mac icons -----------------------------------------------------------------------------------------------------
 
+def body(n):
+    """A plate's drawing without its <svg> wrapper."""
+    return re.sub(r"^.*?<svg[^>]*>|</svg>\s*$", "", (PLATES / f"{n}.svg").read_text(), flags=re.S)
+
+
+def mac_svg(n):
+    return ('<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024"><defs>'
+            '<clipPath id="tile"><rect x="100" y="100" width="824" height="824" rx="185"/></clipPath>'
+            '<filter id="sh" x="-20%" y="-20%" width="140%" height="140%">'
+            '<feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#000" flood-opacity=".3"/></filter></defs>'
+            '<rect x="100" y="100" width="824" height="824" rx="185" fill="#000" filter="url(#sh)"/>'
+            f'<g clip-path="url(#tile)"><svg x="100" y="100" width="824" height="824" viewBox="0 0 120 120">{body(n)}'
+            '</svg></g></svg>')
+
+
+def round_svg(n):
+    """The web shape: the plate clipped to a rounded square."""
+    return ('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><clipPath id="r"><rect width="120" '
+            f'height="120" rx="27"/></clipPath><g clip-path="url(#r)">{body(n)}</g></svg>\n')
+
+
+def render(svg, out, px, flat=False):
+    """Draw svg text to a px-square PNG; flat drops the alpha channel (Apple wants none on iOS icons)."""
+    with tempfile.TemporaryDirectory() as tmp:
+        src = Path(tmp) / "in.svg"
+        src.write_text(svg)
+        subprocess.run(["resvg", "-w", str(px), "-h", str(px), str(src), str(out)], check=True)
+        if flat:
+            jpg = Path(tmp) / "flat.jpg"
+            for a, b, fmt in ((out, jpg, "jpeg"), (jpg, out, "png")):
+                subprocess.run(["sips", "-s", "format", fmt, "-s", "formatOptions", "100", str(a), "--out", str(b)],
+                               check=True, capture_output=True)
+
+
 def mac(args):
     m = manifest()
     picked = names(m, args.names) if args.names else [n for n in sorted(m["plates"]) if (MAC / f"{n}.png").exists()]
     for n in picked:
-        inner = re.sub(r"<\?xml[^>]*\?>", "", (PLATES / f"{n}.svg").read_text())
-        inner = re.sub(r"<svg\b", '<svg x="100" y="100"', inner, count=1)
-        inner = re.sub(r'\swidth="[^"]*"', ' width="824"', inner, count=1)
-        inner = re.sub(r'\sheight="[^"]*"', ' height="824"', inner, count=1)
-        wrap = ('<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024"><defs>'
-                '<clipPath id="tile"><rect x="100" y="100" width="824" height="824" rx="185"/></clipPath>'
-                '<filter id="sh" x="-20%" y="-20%" width="140%" height="140%">'
-                '<feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#000" flood-opacity=".3"/></filter></defs>'
-                '<rect x="100" y="100" width="824" height="824" rx="185" fill="#000" filter="url(#sh)"/>'
-                f'<g clip-path="url(#tile)">{inner}</g></svg>')
-        with tempfile.NamedTemporaryFile("w", suffix=".svg") as f:
-            f.write(wrap); f.flush()
-            subprocess.run(["resvg", "-w", "1024", "-h", "1024", f.name, str(MAC / f"{n}.png")], check=True)
+        render(mac_svg(n), MAC / f"{n}.png", 1024)
         print(f"mac/{n}.png")
+    return 0
+
+
+# ---- his own apps --------------------------------------------------------------------------------------------------
+
+def png_info(path):
+    out = subprocess.run(["sips", "-g", "pixelWidth", "-g", "hasAlpha", str(path)], capture_output=True, text=True).stdout
+    return int(re.search(r"pixelWidth: (\d+)", out).group(1)), "hasAlpha: yes" in out
+
+
+def ico(n, out):
+    """favicon.ico holding 16, 32 and 48 px PNGs of the rounded plate."""
+    import struct
+    with tempfile.TemporaryDirectory() as tmp:
+        blobs = []
+        for px in (16, 32, 48):
+            f = Path(tmp) / f"{px}.png"
+            render(round_svg(n), f, px)
+            blobs.append((px, f.read_bytes()))
+    head, data, at = struct.pack("<HHH", 0, 1, len(blobs)), b"", 6 + 16 * len(blobs)
+    for px, b in blobs:
+        head += struct.pack("<BBBBHHII", px, px, 0, 0, 1, 32, len(b), at + len(data))
+        data += b
+    out.write_bytes(head + data)
+
+
+def export(args):
+    """Each target is a path under ~/Projects; what is written follows the file that is already there:
+    an .appiconset gets every size its Contents.json lists (Mac sizes as the shadowed tile, the rest square
+    with no alpha); an .svg is the plain plate, or the rounded one if the file there is clipped; a .png keeps
+    its size, and is the Mac tile if named *mac*, rounded if it has alpha, square if not; an .ico is rebuilt."""
+    m = manifest()
+    root = Path.home() / "Projects"
+    picked = names(m, args.names) if args.names else sorted(m.get("apps", {}))
+    for n in picked:
+        for rel in m.get("apps", {}).get(n, []):
+            t = root / rel
+            if not t.exists():
+                print(f"{n}: missing {rel}"); continue
+            if t.suffix == ".appiconset":
+                done = set()
+                for im in json.loads((t / "Contents.json").read_text())["images"]:
+                    name = im.get("filename")
+                    if not name or name in done:
+                        continue
+                    done.add(name)
+                    px = round(float(im["size"].split("x")[0]) * int(im.get("scale", "1x").rstrip("x")))
+                    if im.get("idiom") == "mac":
+                        render(mac_svg(n), t / name, px)
+                    else:
+                        render((PLATES / f"{n}.svg").read_text(), t / name, px, flat=True)
+            elif t.suffix == ".svg":
+                t.write_text(round_svg(n) if "clipPath" in t.read_text() else (PLATES / f"{n}.svg").read_text())
+            elif t.suffix == ".png":
+                px, alpha = png_info(t)
+                if "mac" in t.name:
+                    render(mac_svg(n), t, px)
+                elif alpha:
+                    render(round_svg(n), t, px)
+                else:
+                    render((PLATES / f"{n}.svg").read_text(), t, px, flat=True)
+            elif t.suffix == ".ico":
+                ico(n, t)
+            else:
+                print(f"{n}: don't know how to write {rel}"); continue
+            print(f"{n}: {rel}")
     return 0
 
 
 def main():
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = p.add_subparsers(dest="what", required=True)
-    for name, fn in (("lint", lint), ("retile", retile), ("markers", markers), ("mac", mac)):
+    for name, fn in (("lint", lint), ("retile", retile), ("markers", markers), ("mac", mac), ("export", export)):
         s = sub.add_parser(name); s.add_argument("names", nargs="*"); s.set_defaults(fn=fn)
     s = sub.add_parser("sheet"); s.add_argument("out"); s.add_argument("names", nargs="*")
     s.add_argument("--ref"); s.add_argument("--only"); s.set_defaults(fn=sheet)

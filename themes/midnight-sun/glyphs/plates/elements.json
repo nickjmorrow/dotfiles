@@ -1,5 +1,5 @@
 {
-  "_note": "Which element each plate belongs to, and each element's colours. The rules live in the plate-icons skill; plates.py reads this file to retile, lint and draw contact sheets. 'allow' lists extra colours one plate may use.",
+  "_note": "Which element each plate belongs to, and each element's colours. The rules live in the plate-icons skill; plates.py reads this file to retile, lint and draw contact sheets. 'allow' lists extra colours one plate may use. 'apps' lists, under ~/Projects, the icon files of his own apps that plates.py export writes each plate into.",
   "ink": {
     "brass": "#c9a85c", "cream": "#e8dcc0", "vermilion": "#cf6f45"
   },
@@ -25,7 +25,21 @@
     "#1b1830"
   ],
   "plates": {
-    "cauldron": "fire", "claude": "fire", "firefox": "fire", "hevy": "fire", "linear": "fire", "hue": "fire", "ledger": "earth", "hoard": "earth", "sprig": "earth", "tend": "earth", "vscode": "earth", "practice": "earth", "iterm2": "earth", "fogofworld": "earth", "maps": "earth", "reminders": "earth", "haunt": "earth", "chrome": "air", "gmail": "air", "logseq": "air", "messages": "air", "reader": "air", "tarot": "air", "wikipedia": "air", "x": "air", "omen": "air", "eightsleep": "water", "immich": "water", "music": "water", "rings": "water", "infuse": "water"
+    "cauldron": "fire", "claude": "fire", "firefox": "fire", "hevy": "fire", "linear": "fire", "hue": "fire", "forge": "fire", "ledger": "earth", "hoard": "earth", "sprig": "earth", "tend": "earth", "vscode": "earth", "practice": "earth", "iterm2": "earth", "fogofworld": "earth", "maps": "earth", "reminders": "earth", "haunt": "earth", "coinbox": "earth", "chrome": "air", "gmail": "air", "logseq": "air", "messages": "air", "reader": "air", "tarot": "air", "wikipedia": "air", "x": "air", "omen": "air", "stacks": "air", "eightsleep": "water", "immich": "water", "music": "water", "rings": "water", "infuse": "water"
+  },
+  "apps": {
+    "cauldron": ["cauldron/app/icon.svg", "cauldron/app/apple-icon.png", "cauldron/apple/iOS/Assets.xcassets/AppIcon.appiconset", "cauldron/apple/Watch/Assets.xcassets/AppIcon.appiconset", "cauldron/apple/Mac/Assets.xcassets/AppIcon.appiconset"],
+    "ledger": ["ledger/App/iOS/Assets.xcassets/AppIcon.appiconset", "ledger/App/Mac/Assets.xcassets/AppIcon.appiconset"],
+    "forge": ["forge/App/iOS/Assets.xcassets/AppIcon.appiconset", "forge/App/Mac/Assets.xcassets/AppIcon.appiconset"],
+    "coinbox": ["coinbox/App/iOS/Assets.xcassets/AppIcon.appiconset", "coinbox/App/Mac/Assets.xcassets/AppIcon.appiconset"],
+    "hoard": ["hoard/icons/hoard/icon.svg", "hoard/icons/hoard/icon-1024.png", "hoard/icons/hoard/web/favicon.svg", "hoard/icons/hoard/web/apple-touch-icon.png", "hoard/icons/hoard/web/icon-192.png", "hoard/icons/hoard/web/icon-512.png", "hoard/icons/hoard/web/favicon.ico", "hoard/public/favicon.svg", "hoard/public/apple-touch-icon.png", "hoard/public/icon-192.png", "hoard/public/icon-512.png", "hoard/public/favicon.ico", "hoard-apple/HoardMac/Resources/Assets.xcassets/AppIcon.appiconset"],
+    "practice": ["practice/tools/plate.svg", "practice/apple/App/iOS/Assets.xcassets/AppIcon.appiconset", "practice/apple/App/Mac/Assets.xcassets/AppIcon.appiconset"],
+    "haunt": ["haunt/icons/haunt/plate.svg", "haunt/icons/haunt/icon.svg", "haunt/icons/haunt/icon-1024.png", "haunt/icons/haunt/icon-mac-1024.png", "haunt/icons/haunt/web/favicon.svg", "haunt/icons/haunt/web/apple-touch-icon.png", "haunt/icons/haunt/web/icon-192.png", "haunt/icons/haunt/web/icon-512.png", "haunt/icons/haunt/web/favicon.ico", "haunt/public/icon.svg", "haunt/public/apple-touch-icon.png", "haunt/public/icon-192.png", "haunt/public/icon-512.png", "haunt/public/favicon.ico", "haunt/apple/App/iOS/Assets.xcassets/AppIcon.appiconset", "haunt/apple/App/Mac/Assets.xcassets/AppIcon.appiconset"],
+    "sprig": ["sprig/ios/icon-work/sprig-plate.svg", "sprig/ios/App/Assets.xcassets/AppIcon.appiconset", "sprig/ios/Mac/Assets.xcassets/AppIcon.appiconset"],
+    "tend": ["tend/design/tend-plate.svg", "tend/App/iOS/Assets.xcassets/AppIcon.appiconset", "tend/App/Mac/Assets.xcassets/AppIcon.appiconset"],
+    "omen": ["omen/design/icon/omen-plate.svg", "omen/Omen/Assets.xcassets/AppIcon.appiconset"],
+    "tarot": ["tarot/design/tarot-plate.svg", "tarot/app/Tarot/Assets.xcassets/AppIcon.appiconset"],
+    "stacks": ["stacks/app/Stacks/Assets.xcassets/AppIcon.appiconset"]
   },
   "allow": {
     "chrome": [
